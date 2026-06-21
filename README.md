@@ -1,8 +1,8 @@
 # Retail CC AI Engineering Playbook
 
-**The Complete Operating System for AI-Native Engineering at Retail CC**
+**The Complete Operating System for Autonomous AI Software Engineering**
 
-[![Version](https://img.shields.io/badge/Version-1.0.0-blue)](https://github.com/retail-cc/retail-cc-ai-playbook)
+[![Version](https://img.shields.io/badge/Version-2.0.0-blue)](https://github.com/retail-cc/retail-cc-ai-playbook)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen)](https://github.com/retail-cc/retail-cc-ai-playbook)
 [![Adoption](https://img.shields.io/badge/Adoption-Mandatory-red)](https://github.com/retail-cc/retail-cc-ai-playbook)
 
@@ -11,1378 +11,1483 @@
 ## 📖 Table of Contents
 
 1. [Executive Summary](#1-executive-summary)
-2. [The Retail CC AI Engineering Operating Model](#2-the-retail-cc-ai-engineering-operating-model)
-3. [How AI Agents Access The Harness](#3-how-ai-agents-access-the-harness)
-4. [Daily Engineering Workflow](#4-daily-engineering-workflow)
-5. [Workflow: New Feature Development](#5-workflow-new-feature-development)
-6. [Workflow: Bug Fix](#6-workflow-bug-fix)
-7. [Workflow: Refactoring](#7-workflow-refactoring)
-8. [Workflow: New Repository](#8-workflow-new-repository)
-9. [Workflow: Architecture Change](#9-workflow-architecture-change)
-10. [Role-Based Responsibilities](#10-role-based-responsibilities)
-11. [Expectations For Engineers](#11-expectations-for-engineers)
-12. [Expectations For Architects](#12-expectations-for-architects)
-13. [Expectations For Product Teams](#13-expectations-for-product-teams)
-14. [Expectations For Delivery Leads](#14-expectations-for-delivery-leads)
-15. [AI Development Lifecycle](#15-ai-development-lifecycle)
-16. [Required Artifacts](#16-required-artifacts)
-17. [AI Usage Standards](#17-ai-usage-standards)
-18. [Common Scenarios](#18-common-scenarios)
-19. [Anti-Patterns](#19-anti-patterns)
-20. [Adoption Roadmap](#20-adoption-roadmap)
+2. [The Autonomous Engineering Operating Model](#2-the-autonomous-engineering-operating-model)
+3. [Autonomous Agent Architecture](#3-autonomous-agent-architecture)
+4. [Agent Access & Harness Integration](#4-agent-access--harness-integration)
+5. [Autonomous Execution Pipeline](#5-autonomous-execution-pipeline)
+6. [Workflow: Autonomous Feature Delivery](#6-workflow-autonomous-feature-delivery)
+7. [Workflow: Autonomous Bug Resolution](#7-workflow-autonomous-bug-resolution)
+8. [Workflow: Autonomous Refactoring](#8-workflow-autonomous-refactoring)
+9. [Workflow: Autonomous Repository Creation](#9-workflow-autonomous-repository-creation)
+10. [Workflow: Autonomous Architecture Evolution](#10-workflow-autonomous-architecture-evolution)
+11. [Agent Role Matrix](#11-agent-role-matrix)
+12. [Supervisor Expectations](#12-supervisor-expectations)
+13. [Architect Expectations](#13-architect-expectations)
+14. [Product Expectations](#14-product-expectations)
+15. [Delivery Oversight Expectations](#15-delivery-oversight-expectations)
+16. [The Autonomous Development Lifecycle](#16-the-autonomous-development-lifecycle)
+17. [System Artifacts](#17-system-artifacts)
+18. [Agent Governance Standards](#18-agent-governance-standards)
+19. [Autonomous Execution Scenarios](#19-autonomous-execution-scenarios)
+20. [System Anti-Patterns](#20-system-anti-patterns)
+21. [Adoption & Evolution Roadmap](#21-adoption--evolution-roadmap)
+22. [Visual Assets Reference](#22-visual-assets-reference)
 
 ---
 
 ## 1. Executive Summary
 
-### Why This Playbook Exists
+### 1.1 The Autonomous Operating System
 
-Retail CC has adopted **AI-native engineering** as its standard development model. This means every engineer, architect, product manager, and delivery lead must understand how AI tools, the **AI Harness**, and human judgment work together to produce high‑quality, secure, and architecturally‑sound software.
+Retail CC has transitioned to a fully autonomous AI-driven software engineering model. This is not AI-assisted development. This is AI-executed development with human supervision.
 
-The **[`retail-cc-ai-harness`](https://github.com/retail-cc/retail-cc-ai-harness)** is the **knowledge base** – the single source of truth for architecture, standards, workflows, and prompts. It is machine‑readable and human‑readable.
+The **[`retail-cc-ai-harness`](https://github.com/retail-cc/retail-cc-ai-harness)** is the **executable intelligence layer** – the complete knowledge base that enables autonomous agents to understand, navigate, and modify the Retail CC system without human guidance.
 
-This **Playbook** is the **operating manual** – it tells you **how** to use the Harness in your daily work.
+This **Playbook** is the **system specification** – it defines how autonomous agents operate, how they interact with the Harness, and how humans supervise the process.
 
-Together, they form the complete AI‑native engineering system:
+### 1.2 The Core Transformation
 
-| Component | Purpose |
-|-----------|---------|
-| **Harness** | The "what" – architecture, standards, rules, prompts |
-| **Playbook** | The "how" – processes, roles, expectations, examples |
+| Traditional Engineering | Autonomous Engineering |
+|------------------------|------------------------|
+| Engineer reads ticket | Agent reads ticket autonomously |
+| Engineer finds files | Agent explores repository |
+| Engineer reads architecture | Agent loads Harness context |
+| Engineer writes spec | Agent generates spec from intent |
+| Engineer creates plan | Agent builds implementation plan |
+| Engineer guides AI | Agent executes autonomously |
+| Engineer builds mental model | Agent builds system model from Harness |
 
-### Why Every Team Member Must Understand This
+### 1.3 Why This Exists
 
-| Role | Why They Need This |
-|------|-------------------|
-| **Engineer** | To write code correctly, efficiently, and safely with AI |
-| **Senior Engineer** | To guide others, enforce standards, and deliver complex features |
-| **Principal Engineer** | To set architectural direction and ensure AI respects boundaries |
-| **Architect** | To maintain the integrity of the system and update the Harness |
-| **Tech Lead** | To lead teams through AI‑native delivery and review |
-| **Engineering Manager** | To track adoption, remove blockers, and measure success |
-| **Product Manager** | To write requirements that AI can interpret and implement |
-| **Product Owner** | To validate that AI delivers the right business outcomes |
-| **Delivery Lead** | To plan and govern AI‑assisted sprints and releases |
-| **QA Engineer** | To verify that AI‑generated code meets quality standards |
-| **AI Champion** | To advocate, train, and continuously improve AI workflows |
+This system exists because:
+
+1. **Scale** – Retail CC operates at enterprise scale with 15+ services, 20+ repositories, and growing
+2. **Complexity** – Multi-agent A2A architecture, MCP tool layer, and orchestration require deep context
+3. **Velocity** – Business demands faster delivery cycles
+4. **Consistency** – Human engineers cannot maintain perfect architecture awareness across all components
+5. **Quality** – Autonomous agents, when properly harnessed, produce more consistent, standards-compliant code
+
+### 1.4 Mandatory Participation
+
+| Role | Why They Must Engage |
+|------|---------------------|
+| **Engineer** | To supervise agent work, approve outputs, and maintain system integrity |
+| **Senior Engineer** | To review agent-generated PRs and ensure architectural compliance |
+| **Principal Engineer** | To govern agent capabilities and evolve the Harness |
+| **Architect** | To maintain the Harness as the source of truth for agent reasoning |
+| **Tech Lead** | To oversee agent execution and intervene when needed |
+| **Engineering Manager** | To track agent performance and adoption metrics |
+| **Product Manager** | To provide clear intent that agents can interpret autonomously |
+| **Delivery Lead** | To orchestrate agent-driven releases and monitor system health |
+| **QA Engineer** | To validate agent outputs against quality standards |
+| **AI Champion** | To evolve agent capabilities and refine the Harness |
+| **All New Hires** | Mandatory onboarding to understand the autonomous system |
+
+> 🎯 **This playbook is mandatory reading for everyone involved in Retail CC software delivery.** System autonomy depends on human understanding of agent capabilities and boundaries.
 
 ---
 
-> 🎯 **This playbook is mandatory reading for every Retail CC employee involved in software delivery.** Completion is tracked and expected within the first week of onboarding.
+## 2. The Autonomous Engineering Operating Model
 
----
+### 2.1 The Core Principle
 
-## 2. The Retail CC AI Engineering Operating Model
-
-### The Core Principle
-
-> **"AI writes code. Humans verify. The Harness governs."**
+> **"Agents execute. Humans supervise. The Harness governs."**
 
 <p align="center">
-  <img src="assets/Retail%20CC%20AI%20Operating%20Model.png" alt="Retail CC AI Engineering Operating Model" width="800" style="max-width:100%;">
+  <img src="assets/Retail%20CC%20AI%20Operating%20Model.png" alt="Retail CC Autonomous Engineering Operating Model" width="800" style="max-width:100%;">
 </p>
 
-*Figure 1: The Retail CC AI Engineering Operating Model – Human, AI Agent, and Harness collaboration.*
+*Figure 1: The Retail CC Autonomous Engineering Operating Model – how Agents, Humans, and the Harness interact.*
 
-The diagram above shows the three primary actors:
-
-- **Human** (Engineer, Architect, Product Manager, Tech Lead) – provides intent, reviews outputs, updates the Harness.
-- **AI Agent** (Claude Code, Copilot, Cursor) – reads the Harness and generates code, tests, and reviews.
-- **Harness** – provides architecture knowledge, standards, prompts, and validation.
-
-```mermaid
-flowchart LR
-    subgraph Human["Human"]
-        E[Engineer]
-        A[Architect]
-        PM[Product Manager]
-        TL[Tech Lead]
-    end
-
-    subgraph AI["AI Agent"]
-        C[Claude Code]
-        G[GitHub Copilot]
-        S[Cursor]
-        F[Future Agents]
-    end
-
-    subgraph Harness["Retail CC AI Harness"]
-        Arch[Architecture\nKnowledge]
-        Std[Standards]
-        Prompts[Workflow\nPrompts]
-        Verif[Verification]
-        Workflows[Processes]
-    end
-
-    subgraph Output["Work Products"]
-        Spec[Specification]
-        Plan[Implementation Plan]
-        Code[Code]
-        Tests[Tests]
-        PR[PR + Review]
-        Deploy[Deployed\nSystem]
-    end
-
-    Human -->|"Provide intent"| AI
-    AI -->|"Read"| Harness
-    AI -->|"Generate"| Output
-    Output -->|"Review by"| Human
-    Human -->|"Update"| Harness
-    Human -->|"Approve/Reject"| Output
-```
-
-<p align="center">
-  <img src="assets/AI%20+%20Human%20Collaboration%20Model.png" alt="AI + Human Collaboration Model" width="800" style="max-width:100%;">
-</p>
-
-*Figure 2: How Humans and AI Work Together – the partnership model.*
-
-### The End‑to‑End Flow
-
-Every piece of work follows this cycle:
+### 2.2 The Actor Hierarchy
 
 ```mermaid
 flowchart TD
-    A[Business Intent] --> B[Jira Ticket]
-    B --> C[Specification]
-    C --> D[Implementation Plan]
-    D --> E[AI‑Assisted Code Generation]
-    E --> F[Automated Validation]
-    F --> G[AI Review]
-    G --> H[Human Review]
-    H --> I[Merge & Release]
-    I --> J[Operate & Learn]
-    J --> K[Update Harness]
-    K --> B
+    subgraph "CONTROL PLANE (Human)"
+        ARCH[Architect – Harness Authority]
+        TL[Tech Lead – Execution Oversight]
+        PM[Product – Intent Provider]
+        QA[QA – Quality Validator]
+        DM[Delivery Manager – Release Orchestrator]
+    end
+
+    subgraph "EXECUTION PLANE (Agent)"
+        A1[Primary Agent – Ticket Execution]
+        A2[Investigation Agent – Discovery]
+        A3[Generation Agent – Implementation]
+        A4[Review Agent – Quality Assurance]
+        A5[Registry Agent – Harness Updates]
+    end
+
+    subgraph "INTELLIGENCE LAYER (Harness)"
+        H1[Architecture Knowledge]
+        H2[Standards & Rules]
+        H3[Workflow Prompts]
+        H4[Validation Frameworks]
+        H5[Historical Context]
+    end
+
+    subgraph "OUTPUT PLANE"
+        O1[Specifications]
+        O2[Implementation Plans]
+        O3[Code + Tests]
+        O4[PR + Reviews]
+        O5[Deployed System]
+        O6[Harness Updates]
+    end
+
+    PM -->|"Intent"| A1
+    A1 -->|"Reads"| H1
+    A1 -->|"Reads"| H2
+    A1 -->|"Reads"| H3
+    A1 -->|"Generates"| O1
+    A1 -->|"Generates"| O2
+    A2 -->|"Explores"| O5
+    A2 -->|"Reads"| H1
+    A3 -->|"Reads"| H2
+    A3 -->|"Generates"| O3
+    A4 -->|"Validates"| O3
+    A4 -->|"Reads"| H4
+    A4 -->|"Generates"| O4
+    A5 -->|"Updates"| H1
+    A5 -->|"Updates"| H2
+
+    TL -->|"Approves"| O4
+    QA -->|"Validates"| O3
+    DM -->|"Orchestrates"| O5
+    ARCH -->|"Governs"| H1
+    ARCH -->|"Governs"| H2
 ```
 
-### Key Roles in the Operating Model
+### 2.3 The Autonomous Execution Cycle
 
-| Role | Primary Responsibility | Works With |
-|------|------------------------|------------|
-| **Engineer** | Writes specs, reviews AI code, owns quality | AI, Harness, QA |
-| **AI Agent** | Generates code, tests, and reviews according to Harness | Engineer, Harness |
-| **Harness** | Provides context and governance | AI, Engineer, Architect |
-| **Architect** | Maintains Harness accuracy and architecture boundaries | Harness, Principal Engineer |
-| **Tech Lead** | Ensures process compliance and technical quality | Engineer, Architect |
-| **QA** | Validates outputs and catches gaps | Engineer, AI |
+```mermaid
+flowchart LR
+    subgraph "Phase 1: Intake"
+        TICKET[Jira Ticket] --> AGENT1[Agent Ingests]
+        AGENT1 --> AGENT2[Agent Understands]
+    end
+
+    subgraph "Phase 2: Discovery"
+        AGENT2 --> AGENT3[Agent Explores Repo]
+        AGENT3 --> AGENT4[Agent Loads Harness]
+        AGENT4 --> AGENT5[Agent Builds Model]
+    end
+
+    subgraph "Phase 3: Execution"
+        AGENT5 --> AGENT6[Agent Generates Spec]
+        AGENT6 --> AGENT7[Agent Creates Plan]
+        AGENT7 --> AGENT8[Agent Writes Code]
+        AGENT8 --> AGENT9[Agent Generates Tests]
+    end
+
+    subgraph "Phase 4: Validation"
+        AGENT9 --> AGENT10[Agent Self-Reviews]
+        AGENT10 --> AGENT11[Agent Validates]
+        AGENT11 --> AGENT12[Agent Creates PR]
+    end
+
+    subgraph "Phase 5: Human Gate"
+        AGENT12 --> HUMAN[Human Reviews]
+        HUMAN --> APPROVE{Approve?}
+        APPROVE -->|Yes| MERGE[Merge]
+        APPROVE -->|No| AGENT6
+    end
+
+    subgraph "Phase 6: Update"
+        MERGE --> DEPLOY[Deploy]
+        DEPLOY --> LEARN[Agent Learns]
+        LEARN --> UPDATE[Agent Updates Harness]
+    end
+
+    UPDATE --> TICKET
+```
+
+### 2.4 The Role Transformation
+
+| Old Role | New Role | Shift |
+|----------|----------|-------|
+| Engineer – Coder | Supervisor – Reviewer | From writing to auditing |
+| Engineer – Planner | Supervisor – Approver | From planning to validating |
+| Architect – Documenter | Architect – Harness Authority | From writing docs to governing intelligence |
+| Tech Lead – Guide | Tech Lead – Gatekeeper | From guiding to approving |
+| QA – Tester | QA – Validator | From testing to validating |
+| Product – Requester | Product – Intent Provider | From writing tickets to providing clear intent |
 
 ---
 
-## 3. How AI Agents Access The Harness
+## 3. Autonomous Agent Architecture
+
+### 3.1 Agent Roles and Capabilities
+
+```mermaid
+flowchart TD
+    subgraph "Primary Agent (Execution)"
+        PA[Primary Agent]
+        PA -->|1| READ[Reads Ticket]
+        PA -->|2| EXPLORE[Explores Repository]
+        PA -->|3| LOAD[Loads Harness Context]
+        PA -->|4| SPEC[Generates Specification]
+        PA -->|5| PLAN[Generates Implementation Plan]
+        PA -->|6| CODE[Generates Code]
+        PA -->|7| TESTS[Generates Tests]
+        PA -->|8| REVIEW[Self-Review]
+        PA -->|9| PR[Creates PR]
+        PA -->|10| UPDATE[Updates Harness]
+    end
+
+    subgraph "Specialised Agents"
+        IA[Investigation Agent]
+        GA[Generation Agent]
+        RA[Review Agent]
+        HA[Harness Update Agent]
+    end
+
+    PA --> IA
+    PA --> GA
+    PA --> RA
+    PA --> HA
+
+    IA -->|"Discovers"| COMPONENTS[Components]
+    IA -->|"Discovers"| DEPS[Dependencies]
+    IA -->|"Discovers"| BOUNDARIES[Boundaries]
+
+    GA -->|"Generates"| IMPL[Implementation]
+    GA -->|"Generates"| TESTS2[Tests]
+    GA -->|"Generates"| DOCS[Documentation]
+
+    RA -->|"Validates"| STANDARDS[Standards]
+    RA -->|"Validates"| ARCH[Architecture]
+    RA -->|"Validates"| SEC[Security]
+    RA -->|"Validates"| COVERAGE[Coverage]
+
+    HA -->|"Updates"| H_ARCH[Architecture Files]
+    HA -->|"Updates"| H_STD[Standards Files]
+    HA -->|"Updates"| H_VERIFY[Verification Files]
+```
+
+### 3.2 Agent Capability Matrix
+
+| Agent Role | Primary Responsibility | Reads From Harness | Writes To Output |
+|------------|------------------------|---------------------|------------------|
+| **Primary Agent** | End-to-end execution | All harness files | Specs, plans, code, tests, PRs |
+| **Investigation Agent** | System discovery | `system-overview.md`, `component-catalog.md`, `dependency-map.md` | Discovery report |
+| **Generation Agent** | Code and test generation | `coding-standards.md`, `engineering-rules.md`, `agent-architecture.md`, `mcp-architecture.md` | Code, tests |
+| **Review Agent** | Quality validation | `review-standards.md`, `security-boundaries.md`, `testing-standards.md`, `contract-validation.md` | Review output, PR checklist |
+| **Harness Update Agent** | Knowledge maintenance | All architecture files | Updated harness files |
+| **Architecture Agent** | Design evolution | `architecture-decisions.md`, `system-overview.md` | ADRs, updated architecture |
+
+### 3.3 Agent Decision Framework
+
+```mermaid
+flowchart TD
+    START[Agent Receives Ticket] --> TYPE{What Type?}
+
+    TYPE -->|Feature| F1[Load Feature Context]
+    TYPE -->|Bug| B1[Load Bug Context]
+    TYPE -->|Refactor| R1[Load Refactor Context]
+    TYPE -->|Architecture| A1[Load Architecture Context]
+
+    F1 --> F2[Identify Components]
+    B1 --> B2[Identify Failure Point]
+    R1 --> R2[Identify Technical Debt]
+    A1 --> A2[Identify Impact Area]
+
+    F2 --> F3[Analyse Dependencies]
+    B2 --> B3[Analyse Root Cause]
+    R2 --> R3[Analyse Scope]
+    A2 --> A3[Analyse Consequences]
+
+    F3 --> F4[Assess Risk]
+    B3 --> B4[Assess Severity]
+    R3 --> R4[Assess Safety]
+    A3 --> A4[Assess Viability]
+
+    F4 --> EXEC[Execute]
+    B4 --> EXEC
+    R4 --> EXEC
+    A4 --> EXEC
+
+    EXEC --> VALIDATE{Validate?}
+    VALIDATE -->|Pass| PR[Create PR]
+    VALIDATE -->|Fail| REVISE[Revise]
+    REVISE --> EXEC
+
+    PR --> HUMAN[Human Gate]
+```
+
+---
+
+## 4. Agent Access & Harness Integration
+
+### 4.1 The Harness Intelligence Layer
 
 <p align="center">
   <img src="assets/Harness%20Context%20Flow.png" alt="Harness Context Flow" width="800" style="max-width:100%;">
 </p>
 
-*Figure 3: How AI Agents Load Harness Context – mandatory files for different task types.*
+*Figure 2: How Autonomous Agents Load Harness Intelligence – automated context discovery.*
 
-### 3.1 Claude Code (Primary Tool)
+### 4.2 Autonomous Context Loading
 
-**Recommended for:** Complex multi‑file changes, architecture‑aware tasks, and full workflow execution.
+Unlike the manual approach in the legacy model, autonomous agents:
 
-**Mandatory Context Files:**
-
-Claude must load these files **at the start of every session**:
-
-```bash
-claude --context README.md \
-       --context architecture/system-overview.md \
-       --context architecture/component-catalog.md \
-       --context standards/engineering-rules.md
-```
-
-**Optional but Recommended Context (task‑dependent):**
-
-| Task Type | Additional Files |
-|-----------|------------------|
-| Agent development | `architecture/agent-architecture.md`, `architecture/a2a-flows.md` |
-| API changes | `architecture/api-landscape.md`, `verification/contract-validation.md` |
-| MCP updates | `architecture/mcp-architecture.md` |
-| Voice features | `architecture/voice-architecture.md` |
-| Security review | `standards/security-boundaries.md` |
-| Testing | `verification/test-strategy.md`, `standards/testing-standards.md` |
-
-**Example Session:**
-
-```bash
-# Start Claude with essential context
-claude --context README.md \
-       --context architecture/system-overview.md \
-       --context architecture/component-catalog.md \
-       --context standards/engineering-rules.md
-
-# Then prompt Claude using the harness prompts
-# For a new feature:
-cat prompts/spec-template.md | claude
-# For implementation:
-cat prompts/implement-task.md | claude
-```
-
-### 3.2 Cursor
-
-**Recommended for:** Interactive coding, inline autocomplete, and exploring existing code.
-
-**Setup:**
-
-Add to your `.cursorrules` file in the root of each repository:
-
-```markdown
-# Retail CC AI Harness Context
-
-When generating code, always reference the Retail CC AI Harness:
-https://github.com/retail-cc/retail-cc-ai-harness
-
-Key context files to consider:
-- architecture/system-overview.md – platform structure
-- architecture/component-catalog.md – component inventory
-- standards/engineering-rules.md – core engineering rules
-- standards/coding-standards.md – language‑specific guidelines
-```
-
-**Recommended Workflow:**
-
-1. Open the relevant Harness file in a separate editor tab.
-2. Ask Cursor to generate code, referencing the file explicitly:
-   > "Using the standards in `standards/coding-standards.md`, generate a FastAPI endpoint for..."
-3. Review and adapt the output.
-
-### 3.3 GitHub Copilot
-
-**Recommended for:** Inline suggestions, quick helpers, and boilerplate generation.
-
-**Setup:**
-
-Add a `.github/copilot-instructions.md` file to each repository (or globally):
-
-```markdown
-# Retail CC AI Harness Instructions
-
-Follow the standards defined in:
-- https://github.com/retail-cc/retail-cc-ai-harness/standards/coding-standards.md
-- https://github.com/retail-cc/retail-cc-ai-harness/standards/engineering-rules.md
-
-- Use TypeScript strict mode (no `any`)
-- For Python, use type hints and Pydantic models
-- All APIs must have OpenAPI annotations
-- Prefer async/await for I/O operations
-```
-
-**Expected Use:**
-- Writing unit tests
-- Generating repetitive code (CRUD endpoints, DTOs)
-- Quick refactoring suggestions
-- Documentation generation
-
-### 3.4 Future AI Agents
-
-As new agents become available, they will integrate via the **Harness API** (not yet built). The integration pattern will be:
+1. **Autonomously discover** which harness files are relevant
+2. **Dynamically load** context based on the ticket
+3. **Build a system model** from the loaded context
+4. **Maintain context** throughout execution
 
 ```mermaid
 flowchart LR
-    A[AI Agent] -->|"Reads"| H[Harness Files]
-    A -->|"Generates"| O[Output]
-    O -->|"Validated by"| V[Harness Validation]
-    V -->|"Approved by"| E[Engineer]
+    TICKET[Ticket] --> AGENT[Agent]
+    AGENT --> SEARCH[Search Harness]
+    SEARCH --> DISCOVER{Discover Relevant?}
+    DISCOVER -->|Yes| LOAD[Load Relevant Files]
+    DISCOVER -->|No| ASK[Ask for Clarification]
+    LOAD --> BUILD[Build System Model]
+    BUILD --> EXECUTE[Execute]
+    EXECUTE --> UPDATE[Update Context]
 ```
 
-All agents must respect:
-- **Architecture boundaries** (from `architecture/`)
-- **Standards** (from `standards/`)
-- **Workflow prompts** (from `prompts/`)
+### 4.3 Mandatory Agent Context (Automatically Loaded)
+
+| Context Category | Files | When Loaded |
+|------------------|-------|-------------|
+| **Foundation** | `README.md`, `AGENTS.md`, `CLAUDE.md` | Always |
+| **Architecture** | `architecture/system-overview.md`, `architecture/component-catalog.md` | Always |
+| **Rules** | `standards/engineering-rules.md`, `standards/coding-standards.md` | Always |
+| **Security** | `standards/security-boundaries.md` | Always |
+
+### 4.4 Dynamic Agent Context (Discovered Based on Ticket)
+
+| Ticket Type | Additional Files Loaded |
+|-------------|------------------------|
+| **Agent change** | `architecture/agent-architecture.md`, `architecture/a2a-flows.md` |
+| **API change** | `architecture/api-landscape.md`, `verification/contract-validation.md` |
+| **MCP change** | `architecture/mcp-architecture.md` |
+| **Voice change** | `architecture/voice-architecture.md` |
+| **Frontend change** | `architecture/frontend-architecture.md` |
+| **Architecture change** | `architecture/architecture-decisions.md` |
+| **Security change** | `standards/security-boundaries.md` |
+| **Testing change** | `verification/test-strategy.md`, `standards/testing-standards.md` |
+
+### 4.5 Agent Tool Integration
+
+#### Claude Code – Autonomous Mode
+
+```bash
+# Agent starts with full context discovery
+claude --autonomous \
+       --harness /path/to/retail-cc-ai-harness \
+       --ticket BRAIN-1234 \
+       --output plan.md,code,tests,pr.md
+```
+
+#### Cursor – Agent Mode
+
+```json
+{
+  "agentMode": true,
+  "harnessPath": "/path/to/retail-cc-ai-harness",
+  "contextLoading": "autonomous",
+  "outputArtifacts": ["spec", "plan", "code", "tests", "pr"]
+}
+```
+
+#### GitHub Copilot – Agentic Suggestions
+
+```json
+{
+  "agentic": true,
+  "harnessContext": true,
+  "contextFiles": ["AGENTS.md", "architecture/", "standards/"]
+}
+```
+
+### 4.6 Future Agent Integration
+
+```mermaid
+flowchart LR
+    AGENT[Any Future Agent] --> API[Harness API]
+    API --> CONTEXT[Context Discovery]
+    CONTEXT --> LOAD[File Loading]
+    LOAD --> MODEL[Model Building]
+    MODEL --> EXEC[Execution]
+    EXEC --> VALIDATE[Validation]
+    VALIDATE --> OUTPUT[Output]
+    OUTPUT --> HUMAN[Human Gate]
+```
 
 ---
 
-## 4. Daily Engineering Workflow
-
-This is the **core loop** – a developer receives a Jira ticket and delivers it to production.
+## 5. Autonomous Execution Pipeline
 
 <p align="center">
-  <img src="assets/Daily%20Engineer%20Workflow.png" alt="Daily Engineer Workflow" width="800" style="max-width:100%;">
+  <img src="assets/Daily%20Engineer%20Workflow.png" alt="Autonomous Execution Pipeline" width="800" style="max-width:100%;">
 </p>
 
-*Figure 4: The Engineer's Daily Workflow – 11 steps from ticket to deployment.*
+*Figure 3: The Autonomous Execution Pipeline – 11 automated steps from ticket to deployment.*
 
-### Step 1: Receive and Understand the Ticket
+### 5.1 Pipeline Overview
 
-- [ ] Read the ticket description and acceptance criteria.
-- [ ] Identify the component(s) affected (use `architecture/component-catalog.md`).
-- [ ] Identify the change type:
-  - [ ] New feature
-  - [ ] Bug fix
-  - [ ] Refactoring
-  - [ ] New repository
-  - [ ] Architecture change
+```mermaid
+flowchart TD
+    subgraph "1. INTAKE"
+        TICKET[Jira Ticket] --> AGENT[Agent Receives]
+        AGENT --> PARSE[Parses Ticket]
+        PARSE --> UNDERSTAND[Understands Intent]
+    end
 
-### Step 2: Load Harness Context
+    subgraph "2. DISCOVERY"
+        UNDERSTAND --> EXPLORE[Explores Repository]
+        EXPLORE --> LOAD[Loads Harness Context]
+        LOAD --> IDENTIFY[Identifies Components]
+        IDENTIFY --> TRACE[Traces Dependencies]
+        TRACE --> RISK[Assesses Risk]
+    end
 
-- [ ] Open the AI Harness repository (`retail-cc-ai-harness`).
-- [ ] Load mandatory files into your AI tool:
-  - `architecture/system-overview.md`
-  - `architecture/component-catalog.md`
-  - `standards/engineering-rules.md`
-- [ ] Load additional context based on the affected component.
+    subgraph "3. PLANNING"
+        RISK --> SPEC[Generates Specification]
+        SPEC --> PLAN[Generates Implementation Plan]
+        PLAN --> APPROVE1[Human Approves Plan]
+    end
 
-### Step 3: Create a Specification (`spec.md`)
+    subgraph "4. EXECUTION"
+        APPROVE1 --> CODE[Generates Code]
+        CODE --> TESTS[Generates Tests]
+        TESTS --> DOCS[Generates Documentation]
+    end
 
-- [ ] Copy the template: `cp prompts/spec-template.md specs/<jira-id>-<short-name>.md`
-- [ ] Fill in all sections:
-  - Business Intent
-  - Acceptance Criteria
-  - Technical Constraints
-  - Verification Requirements
-  - Success Metrics
-  - Out of Scope
-  - Dependencies
-- [ ] **Do not skip any section.** Incomplete specs lead to poor AI output.
-- [ ] Review the spec with the Tech Lead or Product Owner.
+    subgraph "5. VALIDATION"
+        DOCS --> UNIT[Runs Unit Tests]
+        UNIT --> INTEGRATION[Runs Integration Tests]
+        INTEGRATION --> LINT[Runs Linting]
+        LINT --> SCAN[Runs Security Scan]
+        SCAN --> REVIEW[Self-Review]
+    end
 
-**Checklist for a Good Spec:**
-- [ ] Business intent is clearly stated.
-- [ ] Acceptance criteria are testable (Given/When/Then recommended).
-- [ ] Technical constraints reference the Harness files.
-- [ ] Out of scope is explicitly stated.
-- [ ] Dependencies are identified.
+    subgraph "6. SUBMISSION"
+        REVIEW --> PR[Creates PR]
+        PR --> AI_REVIEW[AI Review Pass]
+        AI_REVIEW --> APPROVE2[Human Approves PR]
+    end
 
-### Step 4: Create an Implementation Plan (`plan.md`)
+    subgraph "7. RELEASE"
+        APPROVE2 --> MERGE[Merge]
+        MERGE --> DEPLOY[Deploy]
+    end
 
-- [ ] Use the prompt: `cat prompts/create-plan.md | claude`
-- [ ] Provide the spec as input.
-- [ ] The AI will generate a plan covering:
-  - Architecture impact assessment
-  - Components affected
-  - Orchestration considerations
-  - Validation approach
-  - Risk assessment
-  - Estimated effort
-- [ ] Review the plan and adjust estimates.
+    subgraph "8. UPDATE"
+        DEPLOY --> LEARN[Learn]
+        LEARN --> HARNESS[Update Harness]
+    end
 
-### Step 5: Generate Code
+    HARNESS --> TICKET
+```
 
-- [ ] Use the prompt: `cat prompts/implement-task.md | claude`
-- [ ] Provide the spec and plan as input.
-- [ ] The AI will generate:
-  - Implementation code (with proper file paths)
-  - Test code
-  - Validation evidence
-- [ ] **Do not** accept the code blindly. Review it for:
-  - Standards compliance (use `standards/coding-standards.md`)
-  - Architecture alignment (use `architecture/`)
-  - Security (use `standards/security-boundaries.md`)
+### 5.2 Pipeline Phase Details
 
-### Step 6: Local Validation
+#### Phase 1: Intake (Agent Autonomous)
 
-- [ ] Run unit tests: `pytest tests/unit`
-- [ ] Run integration tests: `pytest tests/integration`
-- [ ] Run linting: `ruff check .` or `npm run lint`
-- [ ] Verify the code behaves as expected.
-- [ ] Fix any issues manually or by regenerating with AI.
+| Step | Agent Action | Input | Output |
+|------|--------------|-------|--------|
+| 1.1 | Receive ticket | Jira ticket | Ticket loaded |
+| 1.2 | Parse ticket | Ticket text | Intent extracted |
+| 1.3 | Understand intent | Intent | Change type identified |
 
-### Step 7: AI Review
+#### Phase 2: Discovery (Agent Autonomous)
 
-- [ ] Use the prompt: `cat prompts/review-change.md | claude`
-- [ ] Provide the full PR diff as input.
-- [ ] The AI will produce a checklist with comments.
-- [ ] Address all **blocker** issues before proceeding.
-- [ ] **Do not skip** this step – it is mandatory for Track A compliance.
+| Step | Agent Action | Input | Output |
+|------|--------------|-------|--------|
+| 2.1 | Explore repository | Repository | File inventory |
+| 2.2 | Load Harness context | Harness files | System model |
+| 2.3 | Identify components | System model | Affected components |
+| 2.4 | Trace dependencies | Component list | Dependency graph |
+| 2.5 | Assess risk | Dependency graph | Risk assessment |
 
-### Step 8: Human Review
+#### Phase 3: Planning (Agent + Human)
 
-- [ ] Create a PR with the AI-generated PR description (use `prompts/create-pull-request.md`).
-- [ ] Include the AI review output as a comment or attachment.
-- [ ] Request review from the appropriate Tech Lead (see `architecture/ownership-matrix.md`).
-- [ ] Human reviewer checks:
-  - Business correctness
-  - Architecture fit
-  - Production readiness
-  - Operational safety
-  - Edge‑case behavior
+| Step | Agent Action | Human Action | Output |
+|------|--------------|--------------|--------|
+| 3.1 | Generate specification | Review spec | `spec.md` |
+| 3.2 | Generate implementation plan | Review plan | `plan.md` |
+| 3.3 | Submit for approval | Approve/reject plan | Approved plan |
 
-### Step 9: Merge
+#### Phase 4: Execution (Agent Autonomous)
 
-- [ ] After all checks pass (CI, AI review, human review), merge the PR.
-- [ ] Ensure the Jira ticket is linked and updated.
+| Step | Agent Action | Input | Output |
+|------|--------------|-------|--------|
+| 4.1 | Generate code | Plan | Implementation code |
+| 4.2 | Generate tests | Spec + Code | Test files |
+| 4.3 | Generate documentation | Code | Documentation |
 
-### Step 10: Deploy
+#### Phase 5: Validation (Agent Autonomous)
 
-- [ ] Follow the release workflow (`workflows/release-workflow.md`).
-- [ ] Staging deploy (Thursday) → Smoke tests → Regression.
-- [ ] Production deploy (following week) with canary rollout.
+| Step | Agent Action | Input | Output |
+|------|--------------|-------|--------|
+| 5.1 | Run unit tests | Code + Tests | Test results |
+| 5.2 | Run integration tests | Code + Tests | Integration results |
+| 5.3 | Run linting | Code | Lint results |
+| 5.4 | Run security scan | Code | Security results |
+| 5.5 | Self-review | All outputs | Review output |
+
+#### Phase 6: Submission (Agent + Human)
+
+| Step | Agent Action | Human Action | Output |
+|------|--------------|--------------|--------|
+| 6.1 | Create PR | Review PR | Pull request |
+| 6.2 | Run AI review | – | AI review output |
+| 6.3 | Submit for human review | Approve/reject | Approved PR |
+
+#### Phase 7: Release (Agent + Human)
+
+| Step | Agent Action | Human Action | Output |
+|------|--------------|--------------|--------|
+| 7.1 | Merge | Approve merge | Merged code |
+| 7.2 | Deploy | Orchestrate release | Deployed system |
+
+#### Phase 8: Update (Agent Autonomous)
+
+| Step | Agent Action | Input | Output |
+|------|--------------|-------|--------|
+| 8.1 | Learn from deployment | System metrics | Learnings |
+| 8.2 | Update Harness | Learnings | Updated harness files |
 
 ---
 
-## 5. Workflow: New Feature Development
-
-### Scenario
-
-A new feature is requested (e.g., "Visitor Memory Viewer" – the Jira ticket from Trial 1).
+## 6. Workflow: Autonomous Feature Delivery
 
 <p align="center">
-  <img src="assets/Feature%20Delivery%20Lifecycle%20(Swimlane).png" alt="Feature Delivery Lifecycle – Swimlane" width="800" style="max-width:100%;">
+  <img src="assets/Feature%20Delivery%20Lifecycle%20(Swimlane).png" alt="Autonomous Feature Delivery" width="800" style="max-width:100%;">
 </p>
 
-*Figure 5: Feature Delivery Lifecycle – Swimlane showing roles across phases.*
+*Figure 4: Autonomous Feature Delivery – swimlane showing agent actions across phases.*
 
-### Swimlane Diagram
+### 6.1 The Autonomous Feature Flow
 
 ```mermaid
 sequenceDiagram
     participant PM as Product Manager
-    participant PO as Product Owner
-    participant Dev as Developer
+    participant AGENT as AI Agent
+    participant HARNESS as Harness
     participant TL as Tech Lead
-    participant Arch as Architect
-    participant AI as AI Agent
-    participant QA as QA Engineer
-    participant Delivery as Delivery Lead
+    participant QA as QA
+    participant DELIVERY as Delivery
 
-    PM->>PO: 1. Define feature requirements
-    PO->>Dev: 2. Create Jira ticket with AC
-    Dev->>TL: 3. Review ticket with Tech Lead
-    TL->>Arch: 4. If architecture impact, consult Architect
-    Arch->>Dev: 5. Provide architectural guidance
-    Dev->>AI: 6. Load Harness context
-    Dev->>AI: 7. Generate spec (prompts/spec-template.md)
-    Dev->>TL: 8. Review spec with Tech Lead
-    TL->>Dev: 9. Approve spec
-    Dev->>AI: 10. Generate plan (prompts/create-plan.md)
-    Dev->>TL: 11. Review plan
-    TL->>Dev: 12. Approve plan
-    Dev->>AI: 13. Generate code (prompts/implement-task.md)
-    Dev->>Dev: 14. Review and adjust code manually
-    Dev->>AI: 15. Run AI review (prompts/review-change.md)
-    AI->>Dev: 16. AI review output (blockers identified)
-    Dev->>Dev: 17. Fix blockers
-    Dev->>TL: 18. Submit PR for human review
-    TL->>Dev: 19. Human review (approve with comments)
-    Dev->>Dev: 20. Merge PR
-    Dev->>QA: 21. Handover for QA validation
-    QA->>Delivery: 22. Sign-off for release
-    Delivery->>Dev: 23. Deploy via release workflow
+    PM->>AGENT: 1. Ticket created with intent
+    AGENT->>HARNESS: 2. Loads context autonomously
+    AGENT->>AGENT: 3. Builds system model
+    AGENT->>AGENT: 4. Generates spec
+    AGENT->>TL: 5. Submits spec for approval
+    TL->>AGENT: 6. Approves spec
+    AGENT->>AGENT: 7. Generates implementation plan
+    AGENT->>TL: 8. Submits plan for approval
+    TL->>AGENT: 9. Approves plan
+    AGENT->>AGENT: 10. Generates code
+    AGENT->>AGENT: 11. Generates tests
+    AGENT->>AGENT: 12. Self-validates
+    AGENT->>TL: 13. Creates PR for human review
+    TL->>AGENT: 14. Approves PR
+    AGENT->>AGENT: 15. Merges code
+    AGENT->>QA: 16. Notifies QA
+    QA->>DELIVERY: 17. Validates and sign-off
+    DELIVERY->>AGENT: 18. Orchestrates deployment
+    AGENT->>HARNESS: 19. Updates harness if needed
 ```
 
-### Inputs, Outputs, and Artifacts
+### 6.2 Inputs, Outputs, and Artifacts
 
-| Step | Inputs | Outputs | Owner |
-|------|--------|---------|-------|
-| Requirements | Business need | Jira ticket | PM/PO |
-| Spec creation | Jira ticket, Harness context | `spec.md` | Developer |
-| Plan creation | `spec.md` | `plan.md` | Developer |
-| Implementation | `spec.md`, `plan.md` | Code, tests | Developer + AI |
-| AI review | Code, tests | Review checklist | AI |
-| Human review | PR, AI review | Approval/Request changes | Tech Lead |
-| QA validation | Deployed code | Test evidence | QA |
-| Release | Approved code | Production deployment | Delivery Lead |
+| Phase | Agent Input | Agent Output | Human Output |
+|-------|-------------|--------------|--------------|
+| **Intake** | Jira ticket | Parsed intent | Clear requirements |
+| **Discovery** | Harness + Repo | System model | – |
+| **Planning** | System model | `spec.md`, `plan.md` | Spec/plan approval |
+| **Execution** | Spec + Plan | Code, tests, docs | – |
+| **Validation** | Code, tests | Test results, review | – |
+| **Submission** | All outputs | PR, AI review | PR approval |
+| **Release** | Merged code | Deployed system | Deployment approval |
+| **Update** | Deployment metrics | Harness updates | – |
 
-### Responsibilities
+### 6.3 Agent Responsibilities
 
-| Role | Responsibility |
-|------|----------------|
-| **Product Manager** | Writes clear, concise feature requirements |
-| **Product Owner** | Validates acceptance criteria and business value |
-| **Developer** | Drives the entire workflow, owns quality and timeliness |
-| **Tech Lead** | Approves spec, plan, and final code; ensures standards |
-| **Architect** | Reviews architecture impact and updates Harness if needed |
-| **AI Agent** | Generates drafts of specs, plans, code, tests, and reviews |
-| **QA** | Validates functionality, edge cases, and regression |
-| **Delivery Lead** | Tracks progress, ensures release readiness |
-
----
-
-## 6. Workflow: Bug Fix
-
-### Scenario
-
-A production bug is reported (P1 or P2). The fix must be delivered quickly.
-
-### Step-by-Step
-
-**1. Triage (Delivery Lead / Tech Lead)**
-- [ ] Assess severity (P0, P1, P2).
-- [ ] Assign the bug to an engineer.
-- [ ] If P0, initiate the **hotfix process** (`workflows/release-workflow.md`).
-
-**2. Investigation (Engineer)**
-- [ ] Load Harness context.
-- [ ] Ask AI to investigate:
-  - "Analyze this error log and identify likely causes."
-  - "What components are involved?"
-- [ ] Use `architecture/dependency-map.md` to trace impact.
-- [ ] Review logs, metrics, and recent changes.
-
-**3. Root Cause Identification**
-- [ ] AI proposes potential root causes.
-- [ ] Engineer validates manually.
-- [ ] Confirm the exact root cause.
-
-**4. Fix Proposal**
-- [ ] AI generates a fix proposal (using `prompts/implement-task.md` with minimal changes).
-- [ ] Engineer reviews the proposal.
-- [ ] Ensure the fix is **targeted** – no scope creep.
-
-**5. Implementation & Test**
-- [ ] AI generates the fix and tests.
-- [ ] Engineer runs tests and verifies locally.
-- [ ] If needed, write a regression test to prevent recurrence.
-
-**6. AI Review**
-- [ ] Run `prompts/review-change.md` on the fix.
-- [ ] Address any blockers.
-
-**7. Human Review & Hotfix Approval**
-- [ ] Tech Lead reviews the fix.
-- [ ] If P0, get approval from Delivery Manager.
-- [ ] Follow the hotfix deployment path.
-
-**8. Deploy & Monitor**
-- [ ] Deploy hotfix (no canary – full rollout).
-- [ ] Monitor metrics closely for 1 hour.
-- [ ] Conduct root cause analysis within 24 hours.
-
-**Checklist for Bug Fix PR:**
-- [ ] Jira ticket linked.
-- [ ] Root cause explained in the PR description.
-- [ ] Fix is minimal and targeted.
-- [ ] Regression test added.
-- [ ] AI review completed.
-- [ ] Human review completed.
-- [ ] Rollback plan documented.
+| Agent Action | Trigger | Output |
+|--------------|---------|--------|
+| **Discover** | Ticket received | Component inventory |
+| **Load** | Component inventory | Harness context |
+| **Model** | Harness context | System understanding |
+| **Spec** | System understanding | `spec.md` |
+| **Plan** | `spec.md` | `plan.md` |
+| **Code** | `plan.md` | Implementation |
+| **Test** | `spec.md` + Code | Tests |
+| **Validate** | Code + Tests | Validation results |
+| **Review** | All outputs | AI review |
+| **PR** | All outputs | Pull request |
+| **Merge** | PR approval | Merged code |
+| **Update** | Learnings | Harness updates |
 
 ---
 
-## 7. Workflow: Refactoring
+## 7. Workflow: Autonomous Bug Resolution
 
-### Scenario
+### 7.1 The Bug Flow
 
-An engineer identifies technical debt (e.g., duplicate code, outdated patterns, or performance issues). They want to improve code without changing behavior.
+```mermaid
+sequenceDiagram
+    participant OPS as Operations
+    participant AGENT as AI Agent
+    participant HARNESS as Harness
+    participant TL as Tech Lead
+    participant DELIVERY as Delivery
 
-### Safety First
+    OPS->>AGENT: 1. Bug report (severity P0/P1/P2)
+    AGENT->>HARNESS: 2. Loads context
+    AGENT->>AGENT: 3. Investigates logs/metrics
+    AGENT->>AGENT: 4. Traces dependency chain
+    AGENT->>AGENT: 5. Identifies root cause
+    AGENT->>AGENT: 6. Proposes fix
+    AGENT->>TL: 7. Submits fix proposal
+    TL->>AGENT: 8. Approves approach
+    AGENT->>AGENT: 9. Generates fix
+    AGENT->>AGENT: 10. Generates regression test
+    AGENT->>AGENT: 11. Self-validates
+    AGENT->>TL: 12. Creates hotfix PR
+    TL->>AGENT: 13. Approves (expedited for P0/P1)
+    AGENT->>DELIVERY: 14. Hotfix deployed
+    AGENT->>HARNESS: 15. Updates harness (RCA)
+```
 
-Before any refactoring:
-- [ ] Ensure **test coverage** is adequate (≥80%).
-- [ ] Identify **architecture boundaries** – don't refactor across boundaries without approval.
-- [ ] Create a **refactoring plan** – what, why, and how.
+### 7.2 Severity-Based Agent Behavior
 
-### AI-Assisted Refactoring
+| Severity | Agent Action | Human Approval | Deployment |
+|----------|--------------|----------------|------------|
+| **P0** | Immediate investigation + fix | Tech Lead (urgent) | Expedited hotfix |
+| **P1** | Immediate investigation + fix | Tech Lead (same day) | Expedited hotfix |
+| **P2** | Investigation + fix | Tech Lead (standard) | Standard release |
+| **P3** | Investigation + backlog | Team (next sprint) | Standard release |
 
-**1. Load Harness Context**
-- [ ] Load `standards/coding-standards.md`, `architecture/dependency-map.md`.
-- [ ] Load the relevant component files.
+### 7.3 Agent Investigation Steps
 
-**2. Generate Refactoring Proposal**
-- [ ] Use Claude: "Propose a refactoring plan for [component] to reduce duplication and improve maintainability. Follow Retail CC standards."
-- [ ] AI outputs a plan with steps and estimated impact.
-
-**3. Human Review of Proposal**
-- [ ] Review the plan with Tech Lead.
-- [ ] Ensure it doesn't violate architecture boundaries.
-
-**4. Incremental Refactoring**
-- [ ] Refactor one module at a time.
-- [ ] Run tests after each change.
-- [ ] Use AI to generate the refactored code.
-- [ ] Manually verify behavior.
-
-**5. Validation**
-- [ ] Run full regression test suite.
-- [ ] Run performance tests (if applicable).
-- [ ] Review with Tech Lead.
-
-**6. PR & Review**
-- [ ] Follow standard PR process.
-- [ ] Highlight that this is a refactoring – no functional change.
-- [ ] Ensure reviewer focuses on maintainability.
-
-**Anti‑Patterns to Avoid:**
-- ❌ Refactoring without tests.
-- ❌ Changing behavior during refactoring.
-- ❌ Refactoring across architecture boundaries without consultation.
-- ❌ Large, monolithic refactoring PRs.
-
----
-
-## 8. Workflow: New Repository
-
-### Scenario
-
-A new service is needed (e.g., a new agent or a new integration adapter).
-
-### Step-by-Step
-
-**1. Architecture Review**
-- [ ] Architect proposes the new repository in an ADR (`architecture/architecture-decisions.md`).
-- [ ] Review the ADR with the Architecture Review Board.
-- [ ] Approve the ADR before proceeding.
-
-**2. Repository Creation**
-- [ ] Create a new repository under the `retail-cc` GitHub organization.
-- [ ] Follow naming conventions (`standards/naming-conventions.md`).
-- [ ] Set up the base structure (template from `retailcc-base-a2a-agent` or `retailcc-base-mcp-server`).
-
-**3. Harness Registration**
-- [ ] Add the new repository to:
-  - `architecture/component-catalog.md`
-  - `architecture/dependency-map.md`
-  - `architecture/ownership-matrix.md`
-  - `architecture/component-matrix.md`
-- [ ] Add a `CLAUDE.md` and `AGENTS.md` file to the new repo (see templates).
-
-**4. Standards Onboarding**
-- [ ] Ensure the repository includes:
-  - CI/CD pipeline (copy from another service)
-  - Linting and formatting
-  - Test framework setup
-  - Dockerfile and deployment manifests
-- [ ] Reference the Harness `standards/` directory for coding rules.
-
-**5. Initial Code Generation**
-- [ ] Use AI to generate a "hello world" endpoint or agent skeleton.
-- [ ] Follow `prompts/implement-task.md` with a minimal spec.
-
-**6. Ownership Assignment**
-- [ ] Assign Tech Lead and Architecture Reviewer in `ownership-matrix.md`.
-- [ ] Define primary and secondary validation in `component-matrix.md`.
-
-**7. Onboarding**
-- [ ] Notify the team of the new repository.
-- [ ] Update any relevant documentation (e.g., team Wiki).
-
-**Checklist:**
-- [ ] ADR approved.
-- [ ] Repository created with correct naming.
-- [ ] Harness files updated with the new component.
-- [ ] CI/CD pipeline configured.
-- [ ] Standards applied.
-- [ ] Ownership defined.
-- [ ] Initial code generated and merged.
+```mermaid
+flowchart TD
+    BUG[Bug Report] --> AGENT1[Agent Receives]
+    AGENT1 --> AGENT2[Agent Loads Context]
+    AGENT2 --> AGENT3[Agent Checks Logs]
+    AGENT3 --> AGENT4[Agent Checks Metrics]
+    AGENT4 --> AGENT5[Agent Traces Dependencies]
+    AGENT5 --> AGENT6[Agent Identifies Root Cause]
+    AGENT6 --> AGENT7[Agent Generates Fix]
+    AGENT7 --> AGENT8[Agent Generates Regression Test]
+    AGENT8 --> AGENT9[Agent Validates]
+    AGENT9 --> HUMAN{Severity?}
+    HUMAN -->|P0/P1| HOTFIX[Hotfix PR]
+    HUMAN -->|P2/P3| STANDARD[Standard PR]
+```
 
 ---
 
-## 9. Workflow: Architecture Change
+## 8. Workflow: Autonomous Refactoring
 
-### Scenario
+### 8.1 The Refactoring Flow
 
-An architect proposes a change to the system architecture (e.g., introducing a new agent communication pattern, changing the database, or splitting a service).
+```mermaid
+sequenceDiagram
+    participant AGENT as AI Agent
+    participant HARNESS as Harness
+    participant TL as Tech Lead
+    participant QA as QA
+
+    AGENT->>HARNESS: 1. Loads context
+    AGENT->>AGENT: 2. Identifies technical debt
+    AGENT->>AGENT: 3. Assesses safety (tests)
+    AGENT->>AGENT: 4. Generates refactoring plan
+    AGENT->>TL: 5. Submits plan
+    TL->>AGENT: 6. Approves plan
+    AGENT->>AGENT: 7. Refactors incrementally
+    AGENT->>AGENT: 8. Runs tests after each step
+    AGENT->>AGENT: 9. Self-validates
+    AGENT->>TL: 10. Creates PR
+    TL->>AGENT: 11. Reviews and approves
+    AGENT->>QA: 12. Notifies QA
+    QA->>AGENT: 13. Validates regression
+    AGENT->>AGENT: 14. Updates harness if needed
+```
+
+### 8.2 Safety Checks
+
+| Check | Agent Action | Human Validation |
+|-------|--------------|------------------|
+| **Test coverage** | Verify ≥80% | Review coverage report |
+| **Architecture boundaries** | Verify no cross-boundary refactor | Architecture review |
+| **Dependencies** | Verify no breaking changes | Dependency review |
+| **Performance** | Verify no degradation | Performance test review |
+
+---
+
+## 9. Workflow: Autonomous Repository Creation
+
+### 9.1 The Repository Flow
+
+```mermaid
+sequenceDiagram
+    participant ARCH as Architect
+    participant AGENT as AI Agent
+    participant HARNESS as Harness
+    participant TL as Tech Lead
+
+    ARCH->>AGENT: 1. Repository request with ADR
+    AGENT->>HARNESS: 2. Loads context
+    AGENT->>AGENT: 3. Creates repository skeleton
+    AGENT->>AGENT: 4. Sets up structure
+    AGENT->>AGENT: 5. Adds CI/CD pipeline
+    AGENT->>AGENT: 6. Generates base code
+    AGENT->>AGENT: 7. Creates CLAUDE.md + AGENTS.md
+    AGENT->>HARNESS: 8. Updates component-catalog.md
+    AGENT->>HARNESS: 9. Updates ownership-matrix.md
+    AGENT->>HARNESS: 10. Updates dependency-map.md
+    AGENT->>TL: 11. Creates PRs
+    TL->>AGENT: 12. Reviews and approves
+    AGENT->>AGENT: 13. Merges and deploys
+```
+
+### 9.2 Agent-Created Repository Structure
+
+```text
+new-repo/
+├── README.md
+├── CLAUDE.md
+├── AGENTS.md
+├── .github/
+│   ├── workflows/
+│   │   └── ci.yml
+│   └── copilot-instructions.md
+├── src/
+│   └── [service code]
+├── tests/
+│   └── [test code]
+├── Dockerfile
+├── docker-compose.yml
+├── pyproject.toml
+└── .env.example
+```
+
+### 9.3 Harness Updates (Automated)
+
+| File | Update | Agent Action |
+|------|--------|--------------|
+| `component-catalog.md` | Add new repository | Autonomous |
+| `ownership-matrix.md` | Add owners | Autonomous (with human confirmation) |
+| `dependency-map.md` | Add dependencies | Autonomous |
+| `component-matrix.md` | Add validation | Autonomous |
+
+---
+
+## 10. Workflow: Autonomous Architecture Evolution
+
+### 10.1 The Architecture Flow
 
 <p align="center">
   <img src="assets/Architecture%20Governance%20Flow.png" alt="Architecture Governance Flow" width="800" style="max-width:100%;">
 </p>
 
-*Figure 6: Architecture Governance Flow – how architecture changes are managed.*
+*Figure 5: Autonomous Architecture Governance – how architecture changes are proposed and evolved.*
 
-### Step-by-Step
+### 10.2 Agent Architecture Proposal
 
-**1. ADR Creation**
-- [ ] Create an Architecture Decision Record (ADR) using the template:
-  - Decision
-  - Rationale
-  - Alternatives Considered
-  - Consequences
-- [ ] Add the ADR to `architecture/architecture-decisions.md`.
+```mermaid
+sequenceDiagram
+    participant AGENT as AI Agent
+    participant HARNESS as Harness
+    participant ARCH as Architect
+    participant TL as Tech Lead
 
-**2. Impact Analysis**
-- [ ] Use the Harness to assess impact:
-  - `architecture/dependency-map.md` – which components are affected?
-  - `architecture/component-catalog.md` – which teams own them?
-  - `architecture/a2a-flows.md` – if A2A changes, what agents are impacted?
-- [ ] AI can assist: "Analyze the dependency map for component X and list all downstream dependencies."
+    AGENT->>HARNESS: 1. Loads current architecture
+    AGENT->>AGENT: 2. Identifies improvement opportunity
+    AGENT->>AGENT: 3. Generates ADR draft
+    AGENT->>AGENT: 4. Analyzes impact
+    AGENT->>ARCH: 5. Submits ADR
+    ARCH->>AGENT: 6. Reviews and iterates
+    AGENT->>AGENT: 7. Finalizes ADR
+    AGENT->>HARNESS: 8. Updates architecture files
+    AGENT->>HARNESS: 9. Updates dependency-map.md
+    AGENT->>HARNESS: 10. Updates a2a-flows.md (if A2A)
+    AGENT->>TL: 11. Creates implementation PRs
+    TL->>AGENT: 12. Reviews and approves
+```
 
-**3. Harness Updates**
-- [ ] Update any affected files:
-  - `architecture/system-overview.md` – if the high-level view changes.
-  - `architecture/component-catalog.md` – if components change.
-  - `architecture/dependency-map.md` – if dependencies change.
-  - `architecture/architecture-decisions.md` – record the decision.
-- [ ] Ensure the AI Harness remains accurate.
+### 10.3 Agent-Generated ADR
 
-**4. Agent Updates (if applicable)**
-- [ ] If agent interfaces change, update `architecture/a2a-flows.md` and `architecture/agent-architecture.md`.
-- [ ] Update `verification/contract-validation.md` if contracts change.
+```markdown
+# ADR: [Title]
 
-**5. Team Communication**
-- [ ] Communicate the change to all affected teams.
-- [ ] Provide a summary of the impact and timeline.
-- [ ] Schedule a brown‑bag session if needed.
+**Date:** [Auto-generated]
+**Status:** [Draft | Proposed | Accepted | Deprecated]
+**Author:** AI Agent [ID]
 
-**6. Implementation**
-- [ ] Create Jira tickets for each impacted component.
-- [ ] Follow the standard feature development workflow for each ticket.
+## Context
+[Auto-generated from current architecture analysis]
 
-**7. Validation**
-- [ ] Run full regression and contract validation.
-- [ ] Ensure all tests pass after the architecture change.
+## Decision
+[Auto-generated based on identified improvement]
+
+## Consequences
+[Auto-generated impact analysis]
+
+## Alternatives Considered
+[Auto-generated from Harness knowledge]
+
+## References
+[Auto-generated from Harness references]
+```
 
 ---
 
-## 10. Role-Based Responsibilities
-
-### RACI Matrix: AI-Native Development
+## 11. Agent Role Matrix
 
 <p align="center">
-  <img src="assets/Role%20Responsibility%20Map.png" alt="Role Responsibilities in AI-Native Engineering" width="800" style="max-width:100%;">
+  <img src="assets/Role%20Responsibility%20Map.png" alt="Agent Role Map" width="800" style="max-width:100%;">
 </p>
 
-*Figure 7: Role Responsibilities in AI‑Native Engineering – visual summary of RACI matrix.*
+*Figure 6: Agent Role Map – responsibilities across the autonomous system.*
 
-| Activity | Engineer | Sr. Eng. | Principal | Architect | Tech Lead | EM | PM | PO | QA | Delivery | AI Champion |
-|----------|----------|----------|-----------|-----------|-----------|----|----|----|----|----------|-------------|
-| **Define requirements** | C | C | C | C | C | C | R/A | R/A | C | C | C |
-| **Review spec** | R | R/A | A | C | A | C | C | C | C | C | C |
-| **Approve spec** | – | R | R | C | A | C | C | C | – | – | – |
-| **Create plan** | R | R/A | C | C | C | C | – | – | – | – | – |
-| **Generate code** | R | R | C | C | C | – | – | – | – | – | – |
-| **AI review** | R | R | C | C | C | – | – | – | – | – | A |
-| **Human review** | – | R/A | R | C | A | C | – | – | – | – | – |
-| **Merge** | R | R | C | C | A | C | – | – | – | – | – |
-| **Release** | C | C | C | C | R/A | C | C | C | C | R/A | C |
-| **Update Harness** | C | C | R | R/A | C | C | – | – | – | – | A |
-| **Train others** | C | R | R/A | R | R | C | – | – | – | – | A |
-| **Track adoption** | – | C | C | C | C | R/A | C | C | – | R | A |
+### 11.1 Agent Responsibility Matrix
 
-**Legend:**
-- **R** = Responsible (does the work)
-- **A** = Accountable (approves, owns outcome)
-- **C** = Consulted (provides input)
-- **–** = Not involved
+| Activity | Primary Agent | Investigation Agent | Generation Agent | Review Agent | Harness Agent | Human Supervisor |
+|----------|---------------|---------------------|------------------|--------------|---------------|------------------|
+| **Read ticket** | ✅ | – | – | – | – | – |
+| **Explore repository** | ✅ | ✅ | – | – | – | – |
+| **Load Harness context** | ✅ | ✅ | ✅ | ✅ | ✅ | – |
+| **Build system model** | ✅ | ✅ | – | – | – | – |
+| **Generate spec** | ✅ | – | – | – | – | ✅ (review) |
+| **Generate plan** | ✅ | – | – | – | – | ✅ (review) |
+| **Generate code** | – | – | ✅ | – | – | ✅ (review) |
+| **Generate tests** | – | – | ✅ | – | – | – |
+| **Self-validate** | ✅ | – | – | ✅ | – | – |
+| **Run AI review** | – | – | – | ✅ | – | – |
+| **Create PR** | ✅ | – | – | – | – | ✅ (approve) |
+| **Update Harness** | – | – | – | – | ✅ | ✅ (review) |
+| **Learn from deployment** | ✅ | – | – | – | ✅ | – |
+| **Improve Harness** | – | – | – | – | ✅ | ✅ (review) |
 
----
+### 11.2 Human Supervisor Matrix
 
-### Role-Specific Responsibilities
-
-#### Engineer
-| Area | Responsibility |
-|------|----------------|
-| **Workflow** | Execute the full spec-first workflow for assigned tickets. |
-| **AI Usage** | Use AI tools as recommended; always load Harness context. |
-| **Quality** | Ensure code passes all automated and AI reviews. |
-| **Documentation** | Update Harness files when you change architecture or standards. |
-| **Learning** | Stay current with AI tools and Harness updates. |
-
-#### Senior Engineer
-- All Engineer responsibilities.
-- **Mentorship**: Guide junior engineers on AI-native workflow.
-- **Review**: Perform human reviews on complex changes.
-- **Planning**: Help create implementation plans for large features.
-
-#### Principal Engineer
-- **Architecture**: Shape system architecture and ensure Harness reflects it.
-- **Standards**: Define and enforce coding and design standards.
-- **Adoption**: Drive AI-native practices across teams.
-- **Decision Authority**: Approve major architecture changes.
-
-#### Architect
-- **Harness Ownership**: Maintain `architecture/` directory.
-- **ADR**: Document and review all architecture decisions.
-- **Boundaries**: Define and enforce component boundaries.
-- **Training**: Lead architecture training sessions.
-
-#### Tech Lead
-- **Team Oversight**: Ensure team follows the AI-native workflow.
-- **Quality Gates**: Approve PRs and ensure standards are met.
-- **Escalation**: Resolve technical blockers and disputes.
-- **Process**: Adapt the Playbook to team needs.
-
-#### Engineering Manager
-- **Adoption**: Track team adoption of AI tools (metrics, evidence).
-- **Resource**: Ensure team has access to AI tools and Harness.
-- **Performance**: Measure engineering productivity improvements.
-- **Culture**: Foster a culture of responsible AI use.
-
-#### Product Manager / Owner
-- **Requirements**: Write Jira tickets that are AI‑readable (clear AC, context).
-- **Spec Reviews**: Review specs to ensure they match business intent.
-- **Acceptance**: Validate that the delivered feature meets AC.
-
-#### QA Engineer
-- **Validation**: Run test suites and verify AI‑generated code.
-- **Automation**: Contribute to test automation and smoke tests.
-- **Quality Metrics**: Track defect rates and test coverage.
-
-#### Delivery Lead
-- **Planning**: Schedule releases and track milestones.
-- **Risk Management**: Identify and mitigate risks in AI‑assisted delivery.
-- **Compliance**: Ensure all PRs have required evidence.
-- **Reporting**: Provide status to leadership.
-
-#### AI Champion
-- **Advocacy**: Promote AI‑native practices across the organisation.
-- **Training**: Create and deliver training materials.
-- **Feedback**: Collect and action feedback on AI tools and Harness.
-- **Improvement**: Continuously refine prompts and workflows.
+| Activity | Tech Lead | Architect | PM | QA | Delivery | Engineer |
+|----------|-----------|-----------|----|----|----------|----------|
+| **Spec approval** | ✅ | – | ✅ | – | – | – |
+| **Plan approval** | ✅ | – | – | – | – | – |
+| **Code review** | ✅ | ✅ | – | – | – | – |
+| **PR approval** | ✅ | ✅ | – | – | – | – |
+| **Architecture review** | ✅ | ✅ | – | – | – | – |
+| **Security review** | ✅ | ✅ | – | – | – | – |
+| **QA validation** | – | – | – | ✅ | – | – |
+| **Release approval** | – | – | – | – | ✅ | – |
+| **Harness update review** | – | ✅ | – | – | – | – |
+| **Agent oversight** | ✅ | ✅ | – | – | – | ✅ |
 
 ---
 
-## 11. Expectations For Engineers
+## 12. Supervisor Expectations
 
-### What Good Looks Like
+### 12.1 What Good Supervision Looks Like
 
-| Good Practice | Bad Practice |
-|---------------|--------------|
-| ✅ Always load the Harness before prompting AI. | ❌ Prompt without any context. |
-| ✅ Create a spec before writing a single line of code. | ❌ Jump straight into code. |
-| ✅ Review all AI‑generated code and tests. | ❌ Accept code without reading it. |
-| ✅ Run AI review before human review. | ❌ Skip AI review because you trust the code. |
-| ✅ Include AI evidence in every PR. | ❌ Submit PRs without AI disclosure. |
-| ✅ Update Harness files when you change architecture. | ❌ Leave documentation outdated. |
-| ✅ Ask AI to explain its reasoning when unclear. | ❌ Treat AI output as final without question. |
-| ✅ Use the exact prompts from the Harness. | ❌ Write ad‑hoc prompts without structure. |
+| Good Supervision | Poor Supervision |
+|------------------|------------------|
+| ✅ Review agent-generated spec for business alignment | ❌ Approve spec without reading |
+| ✅ Verify plan addresses architecture boundaries | ❌ Skip plan review |
+| ✅ Validate code meets standards | ❌ Blindly approve AI code |
+| ✅ Run security checks on agent output | ❌ Assume AI handled security |
+| ✅ Provide clear feedback when rejecting | ❌ Vague "fix this" comments |
+| ✅ Update Harness when you spot gaps | ❌ Leave Harness outdated |
 
-### Checklist for Every Ticket
+### 12.2 Supervisor Checklist
 
-Before starting any ticket, ask yourself:
+**Before approving a spec:**
 
-- [ ] Do I have the Harness repository open?
-- [ ] Have I loaded `system-overview.md`, `component-catalog.md`, and `engineering-rules.md`?
-- [ ] Do I know which component(s) are affected?
-- [ ] Have I read the relevant architecture files for that component?
-
-During work:
-
-- [ ] Is my spec complete and reviewed?
-- [ ] Did I generate a plan?
-- [ ] Did I use the AI prompts to generate code and tests?
-- [ ] Did I review the code and tests?
-- [ ] Did I run AI review?
-- [ ] Did I fix all blockers?
-
-Before submitting a PR:
-
-- [ ] Does the PR include all required artifacts (spec, plan, tests, AI review)?
-- [ ] Is the AI disclosure complete?
-- [ ] Have I assigned the correct human reviewer?
-
----
-
-## 12. Expectations For Architects
-
-### Architecture Governance
-
-| Responsibility | Frequency |
-|----------------|-----------|
-| Review all ADRs | As submitted |
-| Update `architecture/` files | After every architecture change |
-| Ensure architecture files are AI‑readable | Continuously |
-| Conduct architecture review for major changes | Per PR |
-| Validate that Harness matches reality | Monthly |
-
-### Harness Ownership
-
-- You are the **primary owner** of the `architecture/` and `standards/` directories.
-- Ensure every architecture decision is documented in ADRs.
-- Review all changes to architecture files in PRs.
-- Train other architects on Harness maintenance.
-
-### Documentation Ownership
-
-- Ensure all architecture files are up‑to‑date.
-- Add new files when new components are added.
-- Remove or archive files when components are deprecated.
-- Ensure cross‑links between files are maintained.
-
-### Boundary Ownership
-
-- Define and enforce component boundaries.
-- Update `architecture/dependency-map.md` when dependencies change.
-- Review any change that crosses architecture boundaries.
-
----
-
-## 13. Expectations For Product Teams
-
-### How Product Works with AI-Native Engineering
-
-| Activity | Product Responsibility |
-|----------|------------------------|
-| **Writing Requirements** | Write clear, testable acceptance criteria. Use Given/When/Then format. |
-| **Spec Review** | Review specs to ensure they capture business intent and outcomes. |
-| **Prioritisation** | Ensure the backlog is prioritised so engineers can plan effectively. |
-| **Success Metrics** | Define measurable success metrics for each feature. |
-| **Feedback** | Provide timely feedback on delivered features. |
-
-### How Requirements Should Be Written
-
-**Good Example:**
-
-> **AC:** Given a visitor has viewed 3 products, when they start a new conversation, then the assistant should ask about their recently viewed items.
-
-**Bad Example:**
-
-> **AC:** The system should remember products.
-
-### How Specs Should Be Reviewed
-
-- [ ] Does the spec match the business intent?
-- [ ] Are the acceptance criteria testable?
+- [ ] Does it capture the business intent?
+- [ ] Are acceptance criteria testable?
+- [ ] Are technical constraints included?
 - [ ] Are success metrics defined?
-- [ ] Is out of scope clearly stated?
-- [ ] Are dependencies identified?
+
+**Before approving a plan:**
+
+- [ ] Are all affected components identified?
+- [ ] Are dependencies traced?
+- [ ] Is the risk assessment complete?
+- [ ] Is the testing plan adequate?
+
+**Before approving code:**
+
+- [ ] Do tests pass?
+- [ ] Is code coverage ≥80%?
+- [ ] Are standards followed?
+- [ ] Is security scanned?
+- [ ] Is architecture respected?
+
+**Before approving PR:**
+
+- [ ] Is spec linked?
+- [ ] Is AI evidence present?
+- [ ] Is AI review complete?
+- [ ] Are all approval gates green?
+
+### 12.3 Escalation Triggers
+
+| Trigger | Action |
+|---------|--------|
+| Agent fails validation 3+ times | Escalate to Tech Lead |
+| Agent violates architecture | Escalate to Architect |
+| Agent generates unsafe code | Escalate to Security |
+| Agent fails to update Harness | Escalate to AI Champion |
+| Multiple issues in same area | Escalate to Architecture Review |
 
 ---
 
-## 14. Expectations For Delivery Leads
+## 13. Architect Expectations
 
-### Planning
+### 13.1 Harness Authority
 
-- Ensure all features have specs before sprint planning.
-- Allocate time for spec creation and AI‑assisted development.
-- Track AI tool adoption as part of delivery metrics.
+As the Harness Authority, the Architect:
 
-### Tracking
+- **Owns** the `architecture/` directory
+- **Governs** all architecture decisions (ADRs)
+- **Validates** agent-generated architecture changes
+- **Maintains** the accuracy of the Harness
+- **Evolves** the Harness as the system evolves
 
-| Metric | Target | How to Measure |
-|--------|--------|----------------|
-| PRs with AI evidence | 100% | Check PR checklist |
-| Spec‑first coverage | 100% | Check for `spec.md` per ticket |
-| AI review completion | 100% | Check PR comments |
-| Human review time | ≤24 hours | Measure time from PR to merge |
-| Release quality | No P0/P1 in production | Incident tracking |
+### 13.2 Architecture Governance
 
-### Compliance
+| Responsibility | Frequency | Agent Role |
+|----------------|-----------|------------|
+| Review all ADRs | As submitted | Agent drafts ADR |
+| Ensure architecture files are AI-readable | Continuous | Agent verifies |
+| Validate Harness matches reality | Monthly | Agent audits |
+| Update architecture decisions | As needed | Agent implements |
 
-- Ensure every PR has:
-  - Jira link
-  - AI disclosure
-  - AI review output
-  - Human review approval
-  - Tests evidence
+### 13.3 Agent Supervision
 
-### Adoption
-
-- Monitor AI tool usage (Copilot, Claude, Cursor).
-- Share success stories and best practices.
-- Address concerns and blockers promptly.
-
-### Risk Management
-
-- Identify risks in AI‑assisted delivery (e.g., over‑reliance on AI, hallucinated code).
-- Mitigate with human review, testing, and validation.
-- Maintain a rollback plan for every release.
+- **Review** agent-generated ADRs
+- **Validate** agent architecture proposals
+- **Approve** Harness updates
+- **Guide** agent evolution
 
 ---
 
-## 15. AI Development Lifecycle
+## 14. Product Expectations
+
+### 14.1 Intent Provider
+
+Product Managers and Owners are the **Intent Providers** for the autonomous system. Clear intent enables accurate agent execution.
+
+### 14.2 How to Write Agent-Readable Tickets
+
+**Good Ticket:**
+
+> **Feature:** Sustainability Filter
+> **Intent:** Eco-conscious shoppers need to filter products by sustainability rating.
+> **User:** Shopper searching for sustainable products.
+> **Outcome:** Products with sustainability certifications appear when "sustainable" is mentioned.
+> **AC:** Given a shopper asks for sustainable products, then only products with certifications are shown.
+> **Success Metric:** 15% conversion on sustainable queries.
+
+**Bad Ticket:**
+
+> **Feature:** Add sustainability
+
+### 14.3 Product Responsibilities
+
+| Responsibility | Description | Agent Impact |
+|----------------|-------------|--------------|
+| **Intent clarity** | Write clear, testable tickets | Agent understands requirements |
+| **Acceptance criteria** | Define Given/When/Then | Agent validates against criteria |
+| **Success metrics** | Define measurable outcomes | Agent measures success |
+| **Review specs** | Validate agent-generated specs | Agent receives feedback |
+
+---
+
+## 15. Delivery Oversight Expectations
+
+### 15.1 Release Orchestration
+
+Delivery Leads orchestrate autonomous releases:
+
+| Responsibility | Description | Frequency |
+|----------------|-------------|-----------|
+| **Release planning** | Schedule autonomous releases | Weekly |
+| **Agent performance** | Monitor agent execution metrics | Weekly |
+| **Adoption tracking** | Track agent usage across teams | Weekly |
+| **Risk management** | Identify and mitigate agent risks | Continuous |
+| **Compliance** | Ensure agent outputs meet standards | Per PR |
+
+### 15.2 Delivery Metrics
+
+| Metric | Target | How Agent Contributes |
+|--------|--------|----------------------|
+| Agent adoption rate | 100% | Agent logs usage |
+| Spec coverage | 100% | Agent generates specs |
+| AI review coverage | 100% | Agent self-reviews |
+| PR cycle time | < 4 hours | Agent accelerates execution |
+| Harness accuracy | > 95% | Agent updates Harness |
+| Release quality | No P0/P1 | Agent validates |
+
+---
+
+## 16. The Autonomous Development Lifecycle
 
 <p align="center">
-  <img src="assets/AI%20Development%20Lifecycle.png" alt="The Complete AI Development Lifecycle" width="800" style="max-width:100%;">
+  <img src="assets/AI%20Development%20Lifecycle.png" alt="The Autonomous Development Lifecycle" width="800" style="max-width:100%;">
 </p>
 
-*Figure 8: The Complete AI Development Lifecycle – end-to-end cycle with phases and actor responsibilities.*
+*Figure 7: The Complete Autonomous Development Lifecycle – end-to-end cycle with phase actors.*
 
-### The Complete Lifecycle
+### 16.1 Lifecycle Overview
 
 ```mermaid
 flowchart TD
-    A[Idea] --> B[Jira Ticket]
-    B --> C[Specification]
-    C --> D[Implementation Plan]
-    D --> E[Build: AI + Human]
-    E --> F[Validate: AI + Human]
-    F --> G[Review: AI + Human]
-    G --> H[Release]
-    H --> I[Operate]
-    I --> J[Learn & Observe]
-    J --> K[Improve]
-    K --> B
-
-    subgraph Human["Human Actions"]
-        H1[Write Requirements]
-        H2[Review Spec]
-        H3[Review Plan]
-        H4[Review Code]
-        H5[Approve Release]
-        H6[Monitor]
+    subgraph "Phase 1: Intake"
+        IDEA[Idea] --> TICKET[Jira Ticket]
+        TICKET --> AGENT1[Agent Ingests]
     end
 
-    subgraph AI["AI Actions"]
-        A1[Generate Spec Draft]
-        A2[Generate Plan]
-        A3[Generate Code]
-        A4[Generate Tests]
-        A5[Run AI Review]
-        A6[Suggest Improvements]
+    subgraph "Phase 2: Discovery"
+        AGENT1 --> AGENT2[Agent Explores]
+        AGENT2 --> AGENT3[Agent Loads Harness]
+        AGENT3 --> AGENT4[Agent Builds Model]
     end
 
-    subgraph Harness["Harness Actions"]
-        X1[Provide Context]
-        X2[Enforce Standards]
-        X3[Validate Contracts]
-        X4[Offer Prompts]
+    subgraph "Phase 3: Planning"
+        AGENT4 --> SPEC[Agent Generates Spec]
+        SPEC --> PLAN[Agent Generates Plan]
+        PLAN --> HUMAN1[Human Approves Plan]
     end
 
-    C --> H1
-    C --> A1
-    C --> X1
-    D --> H2
-    D --> A2
-    E --> H3
-    E --> A3
-    F --> H4
-    F --> A4
-    F --> X2
-    G --> H5
-    G --> A5
-    G --> X3
-    H --> H6
-    I --> A6
-    J --> X4
+    subgraph "Phase 4: Execution"
+        HUMAN1 --> CODE[Agent Generates Code]
+        CODE --> TESTS[Agent Generates Tests]
+        TESTS --> DOCS[Agent Generates Docs]
+    end
+
+    subgraph "Phase 5: Validation"
+        DOCS --> VALIDATE1[Agent Validates Code]
+        VALIDATE1 --> VALIDATE2[Agent Validates Tests]
+        VALIDATE2 --> REVIEW[Agent Self-Reviews]
+    end
+
+    subgraph "Phase 6: Submission"
+        REVIEW --> PR[Agent Creates PR]
+        PR --> AI_REVIEW[Agent AI Review Pass]
+        AI_REVIEW --> HUMAN2[Human Approves PR]
+    end
+
+    subgraph "Phase 7: Release"
+        HUMAN2 --> MERGE[Agent Merges]
+        MERGE --> DEPLOY[Agent Orchestrates Deploy]
+    end
+
+    subgraph "Phase 8: Learn"
+        DEPLOY --> LEARN1[Agent Observes]
+        LEARN1 --> LEARN2[Agent Learns]
+        LEARN2 --> UPDATE[Agent Updates Harness]
+    end
+
+    UPDATE --> TICKET
 ```
 
-### Phases and Responsibilities
+### 16.2 Phase Actor Responsibility
 
-| Phase | Human Role | AI Role | Harness Role |
-|-------|------------|---------|--------------|
-| **Idea** | Product defines business need | – | – |
-| **Ticket** | PM/PO writes ticket | – | – |
-| **Spec** | Engineer writes spec | Generates draft | Provides template |
-| **Plan** | Engineer reviews plan | Generates plan | Provides prompts |
-| **Build** | Engineer reviews code | Generates code & tests | Enforces standards |
-| **Validate** | QA runs tests | Runs automated checks | Validates contracts |
-| **Review** | Tech Lead approves | Runs AI review | Checks compliance |
-| **Release** | Delivery Lead deploys | – | – |
-| **Operate** | SRE monitors | – | – |
-| **Learn** | Engineer / Architect | Suggests improvements | Updates context |
-| **Improve** | All | – | Harness updated |
+| Phase | Agent Action | Human Action | Harness Action |
+|-------|--------------|--------------|----------------|
+| **Intake** | Read ticket | Provide intent | – |
+| **Discovery** | Explore, load, model | – | Provide context |
+| **Planning** | Generate spec, plan | Review, approve | Provide templates |
+| **Execution** | Generate code, tests | – | Enforce standards |
+| **Validation** | Validate, review | – | Provide validation |
+| **Submission** | Create PR, AI review | Approve PR | Check compliance |
+| **Release** | Merge, deploy | Orchestrate | – |
+| **Learn** | Observe, learn, update | – | Update intelligence |
 
 ---
 
-## 16. Required Artifacts
+## 17. System Artifacts
 
-For every work item, the following artifacts **must** be produced and stored:
+### 17.1 Artifact Requirements
 
-| Artifact | Purpose | Owner | Storage |
-|----------|---------|-------|---------|
-| **Jira Ticket** | Requirement and tracking | PM/PO | Jira |
-| **Specification (`spec.md`)** | Source of truth for implementation | Engineer | Repository `/specs/` |
-| **Implementation Plan (`plan.md`)** | Approach and risk assessment | Engineer | Repository `/plans/` |
-| **Code** | Implementation | Engineer + AI | Repository |
-| **Tests** | Validation | Engineer + AI | Repository `/tests/` |
-| **AI Review Output** | Evidence of AI review | AI | PR comment or `reviews/` |
-| **PR Description** | Summary and checklist | Engineer | GitHub PR |
-| **Human Review Approval** | Business and architecture sign‑off | Tech Lead | PR review |
-| **QA Evidence** | Validation evidence | QA | Jira or test system |
-| **Release Notes** | Summary of changes | Delivery Lead | Jira / Confluence |
-| **Harness Updates** | If architecture changed | Engineer / Architect | Harness repository |
+| Artifact | Generated By | Used By | Storage |
+|----------|--------------|---------|---------|
+| **Jira Ticket** | Product | Agent | Jira |
+| **Specification** | Agent | Human (review) | Repository `/specs/` |
+| **Implementation Plan** | Agent | Human (review) | Repository `/plans/` |
+| **Code** | Agent | Human (review) | Repository |
+| **Tests** | Agent | Agent (validation) | Repository `/tests/` |
+| **AI Review Output** | Agent | Human (review) | PR comment |
+| **PR** | Agent | Human (review) | GitHub |
+| **Harness Updates** | Agent | Human (review) | Harness repository |
+| **ADR** | Agent | Human (review) | Harness repository |
 
-### Example Checklist for a Feature PR
+### 17.2 Agent Artifact Flow
 
-```markdown
-## Required Artifacts Checklist
+```mermaid
+flowchart LR
+    TICKET[Jira Ticket] --> SPEC[spec.md]
+    SPEC --> PLAN[plan.md]
+    PLAN --> CODE[Code]
+    CODE --> TESTS[Tests]
+    TESTS --> VALIDATE[Validation]
+    VALIDATE --> AI_REVIEW[AI Review]
+    AI_REVIEW --> PR[PR]
+    PR --> MERGE[Merge]
+    MERGE --> UPDATE[Harness Update]
+```
 
-- [ ] Jira ticket linked: [BRAIN-1234]
-- [ ] Specification: `specs/BRAIN-1234-feature.md`
-- [ ] Implementation plan: `plans/BRAIN-1234-plan.md`
-- [ ] Code changes reviewed and tested
-- [ ] Unit tests added/updated
-- [ ] Integration tests added/updated
-- [ ] AI review output attached: `reviews/BRAIN-1234-ai-review.md`
-- [ ] Human review completed by: @tech-lead
-- [ ] QA validation signed off: @qa-lead
-- [ ] Harness updates (if applicable): PR to harness repository
+### 17.3 Artifact Validation (Agent Autonomous)
+
+| Artifact | Agent Validation | Human Validation |
+|----------|------------------|------------------|
+| Spec | Complete? | Business alignment |
+| Plan | Complete? | Approach correctness |
+| Code | Standards, tests pass | Logic, architecture |
+| Tests | Coverage ≥80% | Test completeness |
+| PR | All checks pass | Final approval |
+| Harness Update | Consistency | Accuracy |
+
+---
+
+## 18. Agent Governance Standards
+
+### 18.1 Allowed Agent Actions
+
+| Action | Description | Supervision |
+|--------|-------------|-------------|
+| **Read** | Read repository and Harness files | None (autonomous) |
+| **Explore** | Explore codebase structure | None (autonomous) |
+| **Discover** | Discover components and dependencies | None (autonomous) |
+| **Generate** | Generate code, tests, docs | Human review |
+| **Validate** | Validate code against standards | None (autonomous) |
+| **Review** | Self-review | Human review |
+| **Update** | Update Harness | Human review |
+| **Learn** | Learn from system behaviour | None (autonomous) |
+
+### 18.2 Prohibited Agent Actions
+
+| Action | Why Prohibited |
+|--------|----------------|
+| **Production credentials** | Security risk |
+| **PII without masking** | Privacy risk |
+| **Destructive commands** | Operational risk |
+| **Bypassing human review** | Quality risk |
+| **Unauthorised Harness updates** | Knowledge accuracy risk |
+| **Architecture changes without ADR** | System integrity risk |
+
+### 18.3 Agent Execution Boundaries
+
+| Boundary | Rule |
+|----------|------|
+| **A2A** | Agents communicate via Orchestrator |
+| **MCP** | MCPs are stateless tool servers |
+| **Architecture** | Respect component boundaries |
+| **Security** | Never expose credentials |
+| **Validation** | Never bypass quality gates |
+
+---
+
+## 19. Autonomous Execution Scenarios
+
+### 19.1 Scenario: "I have a Jira ticket"
+
+**Autonomous Execution Flow:**
+
+```mermaid
+flowchart TD
+    TICKET[Jira Ticket] --> A1[Agent Ingests Ticket]
+    A1 --> A2[Agent Parses Intent]
+    A2 --> A3[Agent Explores Repository]
+    A3 --> A4[Agent Loads Harness Context]
+    A4 --> A5[Agent Builds System Model]
+    A5 --> A6[Agent Identifies Components]
+    A6 --> A7[Agent Generates Spec]
+    A7 --> A8[Agent Submits Spec for Human Review]
+    A8 --> A9[Agent Generates Plan]
+    A9 --> A10[Agent Submits Plan for Human Review]
+    A10 --> A11[Agent Generates Code]
+    A11 --> A12[Agent Generates Tests]
+    A12 --> A13[Agent Validates]
+    A13 --> A14[Agent Self-Reviews]
+    A14 --> A15[Agent Creates PR]
+    A15 --> A16[Agent Notifies Human for Approval]
+    A16 --> A17[Agent Merges]
+    A17 --> A18[Agent Updates Harness]
+```
+
+### 19.2 Scenario: "I need to build a new API"
+
+**Agent Execution Flow:**
+
+1. **Ingests ticket** – understands requirement
+2. **Explores repository** – finds API patterns
+3. **Loads Harness** – reads `api-landscape.md`
+4. **Builds model** – understands existing APIs
+5. **Generates spec** – uses `spec-template.md`
+6. **Generates plan** – uses `create-plan.md`
+7. **Generates code** – follows standards
+8. **Generates tests** – covers endpoints
+9. **Validates** – runs all checks
+10. **Self-reviews** – checks contract validation
+11. **Creates PR** – includes all artifacts
+12. **Updates Harness** – updates `api-landscape.md`
+
+### 19.3 Scenario: "I need to add a database table"
+
+**Agent Execution Flow:**
+
+1. **Ingests ticket** – understands requirement
+2. **Loads Harness** – reads `coding-standards.md`
+3. **Explores repository** – finds database patterns
+4. **Generates migration** – uses ORM pattern
+5. **Generates model** – follows standards
+6. **Generates tests** – verifies operations
+7. **Validates** – tests migration
+8. **Creates PR** – includes migration
+9. **Updates Harness** – updates `dependency-map.md`
+
+### 19.4 Scenario: "I need to update an MCP"
+
+**Agent Execution Flow:**
+
+1. **Ingests ticket** – understands requirement
+2. **Loads Harness** – reads `mcp-architecture.md`
+3. **Explores repository** – finds MCP patterns
+4. **Generates spec** – tool contract change
+5. **Generates plan** – update approach
+6. **Generates code** – updates MCP
+7. **Generates tests** – validates contract
+8. **Validates** – runs contract validation
+9. **Creates PR** – includes update
+10. **Updates Harness** – updates `mcp-architecture.md`
+
+### 19.5 Scenario: "I need to fix production"
+
+**Agent Execution Flow:**
+
+```mermaid
+flowchart TD
+    BUG[Bug Report] --> A1[Agent Assesses Severity]
+    A1 --> A2{Severity?}
+    A2 -->|P0/P1| A3[Agent Initiates Hotfix]
+    A2 -->|P2/P3| A4[Agent Initiates Standard Flow]
+
+    A3 --> A5[Agent Investigates Urgently]
+    A5 --> A6[Agent Identifies Root Cause]
+    A6 --> A7[Agent Generates Fix]
+    A7 --> A8[Agent Generates Regression Test]
+    A8 --> A9[Agent Validates]
+    A9 --> A10[Agent Creates Hotfix PR]
+    A10 --> A11[Human Expedites Review]
+    A11 --> A12[Agent Deploys Hotfix]
+    A12 --> A13[Agent Monitors]
+    A13 --> A14[Agent Conducts RCA]
+    A14 --> A15[Agent Updates Harness]
 ```
 
 ---
 
-## 17. AI Usage Standards
+## 20. System Anti-Patterns
 
-### Allowed Uses
+### 20.1 Anti-Pattern: Agent Without Context
 
-- ✅ Generating boilerplate code and tests.
-- ✅ Refactoring existing code for clarity.
-- ✅ Producing initial drafts of specs and plans.
-- ✅ Creating documentation.
-- ✅ Reviewing code for standards, security, and architecture.
-- ✅ Investigating bugs and proposing fixes.
-- ✅ Suggesting performance optimisations.
+| Bad | Good |
+|-----|------|
+| Agent executes without loading Harness | Agent loads Harness autonomously |
+| Agent makes assumptions about architecture | Agent builds model from Harness |
+| Agent violates standards | Agent follows Harness standards |
+| **Consequence:** Wrong code, rework, violations | **Consequence:** Correct code, governance |
 
-### Expected Uses
+### 20.2 Anti-Pattern: Skipping Human Gate
 
-- ✅ Use AI as a **pair programmer** – not a replacement.
-- ✅ Use AI to **explore alternatives** and reason about trade‑offs.
-- ✅ Use AI to **verify** that code meets standards.
-- ✅ Use AI to **generate tests** for edge cases.
+| Bad | Good |
+|-----|------|
+| Agent merges without human review | Agent creates PR for human review |
+| Agent bypasses approval | Agent waits for approval |
+| Agent assumes correctness | Agent validates with human |
+| **Consequence:** Quality issues, security gaps | **Consequence:** Quality, security |
 
-### Discouraged Uses
+### 20.3 Anti-Pattern: Harness Stagnation
 
-- ❌ Asking AI to generate code without understanding the requirements.
-- ❌ Using AI to bypass security reviews.
-- ❌ Using AI to generate code for a component you don't understand.
-- ❌ Using AI without providing sufficient context (Harness files).
-- ❌ Treating AI output as final without human verification.
+| Bad | Good |
+|-----|------|
+| Agent never updates Harness | Agent updates Harness autonomously |
+| Architecture drifts from Harness | Architecture matches Harness |
+| Standards become outdated | Standards evolve with system |
+| **Consequence:** Agent learns wrong patterns | **Consequence:** Agent learns correct patterns |
 
-### Prohibited Uses
+### 20.4 Anti-Pattern: Over-Autonomy
 
-- 🚫 Using AI to access or generate production credentials.
-- 🚫 Using AI to inject malicious or unauthorized code.
-- 🚫 Using AI to bypass human review or compliance.
-- 🚫 Using AI for tasks that require deep business or ethical judgment.
-- 🚫 Using AI outside the approved list (Claude, Copilot, Cursor).
+| Bad | Good |
+|-----|------|
+| Agent makes architecture decisions | Agent proposes architecture changes |
+| Agent bypasses ADR process | Agent generates ADRs |
+| Agent changes system without oversight | Agent submits changes for oversight |
+| **Consequence:** System drift, technical debt | **Consequence:** Governed evolution |
 
-### Examples
+### 20.5 Anti-Pattern: Human Oversight Failures
 
-| Scenario | Correct Use | Incorrect Use |
-|----------|-------------|---------------|
-| **New endpoint** | Load Harness, write spec, use AI to generate endpoint and tests, review. | Prompt "write a FastAPI endpoint" without context, blindly merge. |
-| **Bug fix** | Ask AI to investigate and propose fix, review and test. | Ask AI to fix, merge without testing. |
-| **Refactoring** | Ask AI for a plan, refactor incrementally, run tests. | Ask AI to refactor a whole file in one go. |
-
----
-
-## 18. Common Scenarios
-
-### Scenario 1: I have a Jira ticket
-
-1. Open the Harness repository.
-2. Load mandatory context into your AI tool.
-3. Create a spec using `prompts/spec-template.md`.
-4. Review the spec with your Tech Lead.
-5. Generate a plan using `prompts/create-plan.md`.
-6. Implement using `prompts/implement-task.md`.
-7. Run AI review using `prompts/review-change.md`.
-8. Fix blockers.
-9. Submit PR with `prompts/create-pull-request.md`.
-
-### Scenario 2: I need to build a new API
-
-1. Review `architecture/api-landscape.md` to understand existing APIs.
-2. Update or add a new endpoint specification.
-3. Follow the spec-first workflow.
-4. Ensure the new API includes OpenAPI documentation.
-5. Add contract validation (`verification/contract-validation.md`).
-6. Update `api-landscape.md` with the new endpoint.
-
-### Scenario 3: I need to add a database table
-
-1. Review `standards/coding-standards.md` for ORM rules.
-2. Use AI to generate the migration script.
-3. Ensure the migration is reversible (up/down).
-4. Follow the spec-first workflow.
-5. Include the migration in the PR.
-6. Update `architecture/dependency-map.md` if the new table affects dependencies.
-
-### Scenario 4: I need to update an MCP
-
-1. Review `architecture/mcp-architecture.md`.
-2. Update the MCP tool schema in the code.
-3. Update `mcp-architecture.md` with the new tool parameters.
-4. Ensure backward compatibility or version the tool.
-5. Follow the standard spec-first workflow.
-6. Update `verification/contract-validation.md` if the contract changes.
-
-### Scenario 5: I need to create a new Agent
-
-1. Review `architecture/agent-architecture.md` and `architecture/a2a-flows.md`.
-2. Use the base agent template (`retailcc-base-a2a-agent`).
-3. Follow the spec-first workflow for the new agent.
-4. Register the agent in the A2A Registry.
-5. Update `component-catalog.md` and `ownership-matrix.md`.
-6. Add the agent to `a2a-flows.md` and `agent-architecture.md`.
-
-### Scenario 6: I need to modify orchestration
-
-1. Review `architecture/orchestrator-architecture.md`.
-2. Update the Orchestrator code using the spec-first workflow.
-3. Run orchestration validation (`verification/orchestration-validation.md`).
-4. Ensure the A2A contracts remain compatible.
-5. Update `dependency-map.md` and `orchestrator-architecture.md`.
-
-### Scenario 7: I need to update contracts
-
-1. Review `verification/contract-validation.md`.
-2. Make the contract change in the code.
-3. Run contract validation to ensure no breaking changes.
-4. If breaking, create a new version (major version).
-5. Update `contract-validation.md` and `api-landscape.md`.
-
-### Scenario 8: I need to fix production
-
-1. Follow the **hotfix process** (`workflows/release-workflow.md`).
-2. Use AI to investigate and propose a fix.
-3. Run AI review and human review.
-4. Deploy using the hotfix path.
-5. Conduct root cause analysis.
+| Bad | Good |
+|-----|------|
+| Human approves without reviewing | Human reviews thoroughly |
+| Human treats agent as infallible | Human validates agent outputs |
+| Human ignores agent warnings | Human investigates agent warnings |
+| **Consequence:** Mistakes reach production | **Consequence:** Quality maintained |
 
 ---
 
-## 19. Anti-Patterns
+## 21. Adoption & Evolution Roadmap
 
-### Anti‑Pattern 1: Prompting Without Context
+### 21.1 Week 1: Foundation
 
-**Consequence:** AI generates code that violates architecture, standards, or security.
+| Day | Action | Agent Role | Human Role |
+|-----|--------|------------|------------|
+| 1 | Install agent tools | – | Engineers install Claude, Copilot |
+| 2 | Clone Harness | Agent reads Harness | – |
+| 3 | Read Playbook | Agent follows Playbook | All read Playbook |
+| 4 | First autonomous demo | Agent executes small task | Supervise |
+| 5 | Review and feedback | Agent logs learnings | Provide feedback |
 
-**Solution:** Always load the relevant Harness files before prompting.
+### 21.2 Week 2: First Autonomous Feature
 
-### Anti‑Pattern 2: Skipping Specs
+| Day | Action | Agent Role | Human Role |
+|-----|--------|------------|------------|
+| 1 | Agent receives ticket | Autonomously executes | – |
+| 2 | Agent generates spec | Autonomously creates | Reviews spec |
+| 3 | Agent generates plan | Autonomously creates | Reviews plan |
+| 4 | Agent generates code | Autonomously creates | Reviews code |
+| 5 | Agent submits PR | Autonomously creates | Approves PR |
 
-**Consequence:** No traceability, unclear requirements, and poor AI output.
+### 21.3 Week 3: Scale
 
-**Solution:** Create a spec for every feature, no matter how small.
+| Action | Agent Role | Human Role |
+|--------|------------|------------|
+| Multiple autonomous features | Executes in parallel | Supervises multiple agents |
+| Harness learning | Learns from feedback | Updates Harness |
+| Agent improvement | Self-optimises | Tunes agent behaviour |
 
-### Anti‑Pattern 3: Skipping AI Review
+### 21.4 Week 4: Maturity
 
-**Consequence:** Misses standards violations, security gaps, and architecture issues.
+| Action | Agent Role | Human Role |
+|--------|------------|------------|
+| Full autonomous delivery | End-to-end execution | Minimal oversight |
+| Harness evolution | Updates Harness | Governs changes |
+| Agent evolution | Learns and improves | Guides evolution |
 
-**Solution:** Run AI review as the first pass on every PR.
+### 21.5 Success Metrics
 
-### Anti‑Pattern 4: Blindly Accepting AI Code
-
-**Consequence:** Bugs, security vulnerabilities, and poor design.
-
-**Solution:** Review every line of AI‑generated code.
-
-### Anti‑Pattern 5: Ignoring Ownership
-
-**Consequence:** Unclear escalation paths and knowledge silos.
-
-**Solution:** Always refer to `architecture/ownership-matrix.md`.
-
-### Anti‑Pattern 6: Ignoring Contracts
-
-**Consequence:** Integration failures and broken compatibility.
-
-**Solution:** Always run contract validation on contract changes.
-
-### Anti‑Pattern 7: Ignoring Architecture
-
-**Consequence:** Entropy, technical debt, and system fragility.
-
-**Solution:** Respect component boundaries and update the Harness when architecture changes.
-
-### Anti‑Pattern 8: Duplicating Harness Documentation
-
-**Consequence:** Inconsistency and outdated information.
-
-**Solution:** Point to the Harness; do not duplicate its content.
-
-### Anti‑Pattern 9: Not Updating the Harness
-
-**Consequence:** AI becomes outdated and generates wrong code.
-
-**Solution:** Update the Harness whenever the system or standards change.
-
-### Anti‑Pattern 10: Using AI for Sensitive Decisions
-
-**Consequence:** Compliance and ethical risks.
-
-**Solution:** Use human judgment for business, security, and ethical decisions.
+| Metric | Week 1 | Week 2 | Week 3 | Week 4 | Target |
+|--------|--------|--------|--------|--------|--------|
+| Agent adoption | 30% | 60% | 85% | 95% | 100% |
+| Spec generation | 20% | 60% | 90% | 95% | 100% |
+| Auto-review coverage | 10% | 50% | 85% | 95% | 100% |
+| PR cycle time | 24h | 12h | 6h | 4h | <4h |
+| Harness updates | 0 | 2 | 5 | 8+ | Continuous |
 
 ---
 
-## 20. Adoption Roadmap
+## 22. Visual Assets Reference
 
-### Week 1: Foundation
+### 22.1 Asset Inventory
 
-- [ ] All engineers install and configure approved AI tools (Claude, Copilot, Cursor).
-- [ ] All engineers read the Harness `README.md` and this Playbook.
-- [ ] Tech Leads create a team channel for AI‑related questions.
-- [ ] Identify the AI Champion for your team.
+| # | Asset | Purpose |
+|---|-------|---------|
+| 1 | `Retail CC AI Operating Model.png` | Agent + Human + Harness interaction |
+| 2 | `AI + Human Collaboration Model.png` | Agent-human partnership |
+| 3 | `Harness Context Flow.png` | How agents load context |
+| 4 | `Daily Engineer Workflow.png` | Autonomous execution pipeline |
+| 5 | `Feature Delivery Lifecycle (Swimlane).png` | Swimlane of autonomous feature delivery |
+| 6 | `Architecture Governance Flow.png` | Autonomous architecture evolution |
+| 7 | `Role Responsibility Map.png` | Agent and human role matrix |
+| 8 | `AI Development Lifecycle.png` | Complete autonomous lifecycle |
 
-### Week 2: First Workflows
+### 22.2 Asset Interpretation
 
-- [ ] Pick a small, low‑risk ticket to practice the spec‑first workflow.
-- [ ] Follow the daily engineering workflow steps.
-- [ ] The AI Champion provides office hours for questions.
-- [ ] Collect feedback on the experience.
+All assets in this playbook depict **autonomous system behaviour**, not manual human workflow. The agents are the primary actors:
 
-### Week 3: Standardisation
-
-- [ ] All new features must follow the spec‑first workflow.
-- [ ] AI review becomes mandatory for all PRs.
-- [ ] PR checklist updated to include AI evidence.
-- [ ] Team retro discusses AI usage and improvements.
-
-### Week 4: Maturity
-
-- [ ] All team members are comfortable with the workflow.
-- [ ] AI usage metrics show consistent adoption.
-- [ ] Harness contributions (updates) are made as needed.
-- [ ] Team shares learnings with other teams.
-
-### Success Metrics
-
-| Metric | Week 1 | Week 2 | Week 3 | Week 4 |
-|--------|--------|--------|--------|--------|
-| AI tool installation | 100% | – | – | – |
-| Spec‑first coverage | 50% | 75% | 90% | 95% |
-| AI review coverage | 30% | 70% | 90% | 95% |
-| PRs with AI evidence | 20% | 60% | 85% | 95% |
-| Harness updates | 0 | 2 | 5 | 8+ |
-| Engineer confidence (survey) | 3/5 | 4/5 | 4.5/5 | 5/5 |
+| Asset | Old Interpretation | New Interpretation |
+|-------|-------------------|-------------------|
+| **Operating Model** | Human leads, AI assists | Agent leads, Human supervises |
+| **Daily Workflow** | Human follows steps | Agent executes pipeline |
+| **Feature Delivery** | Human drives | Agent drives, Human gates |
+| **Architecture Governance** | Human proposes | Agent proposes, Human approves |
 
 ---
 
 ## 📌 Appendices
 
-### Appendix A: Quick Reference Cards
+### Appendix A: Agent Quick Reference
 
-Print these and keep them at your desk.
+**For the Agent:**
 
-**Quick Start for a New Ticket:**
-1. Load Harness: `claude --context README.md --context architecture/system-overview.md --context architecture/component-catalog.md --context standards/engineering-rules.md`
-2. Create spec: `cp prompts/spec-template.md specs/<ticket-id>.md`
-3. Create plan: `cat prompts/create-plan.md | claude`
-4. Implement: `cat prompts/implement-task.md | claude`
-5. AI review: `cat prompts/review-change.md | claude`
-6. Create PR: `cat prompts/create-pull-request.md | claude`
+```text
+1. Read ticket → Parse intent → Explore repository → Load Harness → Build model
+2. Generate spec → Generate plan → Submit for approval
+3. Generate code → Generate tests → Validate → Self-review → Create PR
+4. Wait for human approval → Merge → Deploy → Update Harness
+```
 
-**PR Checklist:**
-- [ ] Spec linked
-- [ ] AI evidence disclosed
-- [ ] Tests present
-- [ ] AI review completed
-- [ ] Human review completed
-- [ ] Harness updated (if applicable)
+**Required Harness Context (Autonomous):**
 
-**Required Files to Load by Task:**
-| Task | Files |
-|------|-------|
-| All | `architecture/system-overview.md`, `architecture/component-catalog.md`, `standards/engineering-rules.md` |
-| Agent work | Plus `architecture/agent-architecture.md`, `architecture/a2a-flows.md` |
-| API work | Plus `architecture/api-landscape.md`, `verification/contract-validation.md` |
-| MCP work | Plus `architecture/mcp-architecture.md` |
-| Security review | Plus `standards/security-boundaries.md` |
-| Testing | Plus `verification/test-strategy.md`, `standards/testing-standards.md` |
+```text
+Always load:
+- README.md
+- AGENTS.md
+- architecture/system-overview.md
+- architecture/component-catalog.md
+- standards/engineering-rules.md
+- standards/coding-standards.md
+- standards/security-boundaries.md
 
----
+Dynamic based on ticket type.
+```
 
-### Appendix B: Glossary
+### Appendix B: Agent Checklist
+
+**Before executing any ticket, agent must:**
+
+- [ ] Load all mandatory Harness context
+- [ ] Explore the affected repository
+- [ ] Identify affected components
+- [ ] Trace dependencies
+- [ ] Assess risk
+
+**Before creating PR, agent must:**
+
+- [ ] Generate complete spec
+- [ ] Generate complete plan
+- [ ] Generate code
+- [ ] Generate tests
+- [ ] Validate all checks pass
+- [ ] Self-review completed
+- [ ] All required artifacts present
+
+### Appendix C: Glossary
 
 | Term | Definition |
 |------|------------|
-| **Harness** | The `retail-cc-ai-harness` repository – the AI-readable knowledge base. |
-| **Playbook** | This document – the operational manual. |
-| **Spec** | A specification document created before implementation. |
-| **AI Evidence** | The disclosure in a PR showing which AI tools were used. |
-| **AI Review** | The first-pass review performed by an AI agent. |
-| **Human Review** | The second-pass review by a Tech Lead or Architect. |
-| **A2A** | Agent-to-Agent protocol for communication between agents. |
-| **MCP** | Model Context Protocol – a tool interface standard. |
-| **SHIELD** | The security framework: Separation, Human, Input, Encryption, Least Agency, Deterministic. |
-| **ADR** | Architecture Decision Record. |
+| **Autonomous Agent** | AI system that executes tasks without human guidance |
+| **Harness** | `retail-cc-ai-harness` – the executable intelligence layer |
+| **Playbook** | This document – the system specification |
+| **Human Gate** | The point where a human reviews agent output |
+| **Supervisor** | Human responsible for approving agent outputs |
+| **Intent** | The business requirement provided to the agent |
+| **ADR** | Architecture Decision Record – proposed by agent, approved by architect |
+| **Pipeline** | The autonomous execution sequence from ticket to deployment |
 
 ---
 
-### Appendix C: Change Log
+## 📧 Feedback and Evolution
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2026-06-19 | AI Solutions Architect | Initial release |
-
----
-
-## 📧 Feedback and Questions
-
-- **For questions on the Playbook:** Contact your AI Champion or the Engineering Excellence team.
-- **For Harness updates:** Submit a PR to the `retail-cc-ai-harness` repository.
-- **For AI tool access:** Check with your Engineering Manager.
+- **For agent behaviour issues:** Contact your AI Champion
+- **For Harness gaps:** Agent will propose updates automatically
+- **For system evolution:** Agent will propose ADRs
 
 ---
 
-**This Playbook is a living document.** It will be updated as the Harness evolves and as teams provide feedback.
+**This Playbook is the system specification for autonomous AI software engineering at Retail CC.**
 
 ---
 
-*End of Document*
-
----
-
-*Retail CC – Engineering Excellence – June 2026*
+*Retail CC – AI Engineering Excellence – June 2026*
